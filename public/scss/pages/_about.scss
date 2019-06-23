@@ -1,0 +1,7 @@
+div.about-page {
+  position: relative;
+  top: $nav-height + ($quickNavPercentage * $nav-height);
+  main.about {
+    padding: 30px 0;
+  }
+}

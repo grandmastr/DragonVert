@@ -1,0 +1,21 @@
+// reusable mixins
+@mixin vendor-prefix($css-property,$value) {
+    -moz-#{$css-property}: $value;
+    -webkit-#{$css-property}: $value;
+    -o-#{$css-property}: $value;
+    #{$css-property}: $value;
+}
+
+@mixin transition($time: 0.3s, $type: ease-in-out) {
+    @include vendor-prefix(transition, #{$time} all #{$type});
+}
+
+@mixin flex-container{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}

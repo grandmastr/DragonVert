@@ -1,0 +1,97 @@
+div.login {
+  position: relative;
+  top: $nav-height + ($quickNavPercentage * $nav-height);
+  display: flex;
+  margin: auto;
+  padding: 60px 8px;
+  padding-bottom: 150px #{!important};
+  background: {
+    image: url("../images/laboratory-2815641_1920.jpg");
+    attachment: fixed;
+    size: cover;
+    repeat: no-repeat;
+  }
+  min-height: 90vh;
+  main.login {
+    max-width: 500px;
+    width: 98%;
+    margin: auto;
+    border-radius: 3px;
+    padding: 20px;
+    // padding: 50px 15px;
+    background: #ffffff;
+    h2 {
+      color: $theme-color;
+      font: {
+        size: 1.5em;
+        family: $font-family;
+      }
+      text-transform: capitalize;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+main.register,
+main.contact-form-body {
+  h2 {
+    color: $theme-color;
+    font: {
+      size: 1.5em;
+      family: $font-family;
+    }
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+}
+
+div.f-e {
+  div.footer {
+    position: relative;
+    // bottom: -100px #{!important};
+  }
+}
+
+div.f-p {
+  float: right;
+  display: block;
+  position: relative;
+  top: -50px;
+  font: {
+    size: 0.9em;
+    family: $font-family;
+  }
+  color: $theme-color;
+  a {
+    color: $pop-green;
+    font-size: 1.1em;
+    &:visited {
+      color: $theme-color;
+    }
+  }
+  @media (max-width: $medium-screens) {
+    top: -20px;
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
+  }
+}
+
+div.no-acc {
+  text-align: center;
+  width: 100%;
+  margin-top: 55px;
+  font: {
+    size: 0.9em;
+    family: $font-family;
+  }
+  color: $theme-color;
+  a {
+    // text-decoration: none;
+    color: $pop-green;
+    font-size: 1.1em;
+    &:visited {
+      color: $theme-color;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+div.register {
+  position: relative;
+  top: $nav-height + ($quickNavPercentage * $nav-height);
+  width: 100%;
+  div.register-page {
+    padding: 30px 12px;
+    background: #f1efef;
+    display: flex;
+    min-height: 80vh;
+    div.register-form-body {
+      background: #ffffff;
+      max-width: 800px;
+      margin: auto;
+      width: 98%;
+      div[class^="col-"]:first-child {
+        padding: 20px 30px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        background: {
+          image: url("../../images/capsule-1079838_1920.jpg");
+          repeat: no-repeat;
+          size: cover;
+        }
+        min-height: 520px;
+        @media (max-width: $medium-screens - 1) {
+          display: none;
+        }
+        display: flex;
+        div.register-icon {
+          text-align: center;
+          // position: relative;
+          // top: 8px;
+          margin: auto;
+          .fa-user {
+            height: 80px;
+            width: 80px;
+            color: #ffffff;
+            border: 1.8px solid #ffffff;
+            padding: 10px 20px;
+            border-radius: 18%;
+          }
+        }
+      }
+      div[class^="col-"]:nth-child(2) {
+        padding: 30px 15px;
+        main.register {
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        @media (max-width: $medium-screens - 1) {
+          // border-radius: 5px  #{!important};
+        }
+      }
+    }
+  }
+}

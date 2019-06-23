@@ -1,0 +1,398 @@
+$height: $nav-height - 18px;
+$color: #42b983;
+main#superAdminDashboard {
+  user-select: #{!important};
+  div.brand-address {
+    a {
+      text-decoration: none;
+    }
+    color: $color;
+    margin: auto;
+    display: flex;
+    font: {
+      weight: bold;
+      family: $font-family;
+      size: 1.2em;
+    }
+  }
+  div.account-drop {
+    user-select: none;
+    cursor: pointer;
+    height: $height;
+    display: flex;
+    padding-right: 10px;
+    span {
+      color: $color;
+      svg:not(:last-child) {
+        margin-right: 5px;
+        font-size: 0.8em;
+      }
+      margin: auto;
+      font: {
+        family: $font-family;
+        size: 0.9em;
+        weight: bold;
+      }
+      + div.acc-drop {
+        position: absolute;
+        top: $height - 3px;
+        right: 10px;
+        background: #344a5f;
+        border-radius: 3px;
+        box-shadow: 0 0 5px 1px #333a61;
+        padding: 10px 12px;
+        z-index: 999999999999999;
+        svg {
+          margin-right: 5px;
+        }
+        ul {
+          list-style-type: none;
+          a {
+            text-decoration: none;
+            li {
+              color: $color;
+              font: {
+                weight: bold;
+                family: $font-family;
+                size: 0.8em;
+              }
+            }
+            &:not(:last-child) {
+              li {
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  min-height: 400vh;
+  background: #304356;
+  nav.super-admin-nav {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    // top: ($quickNavPercentage * $nav-height) + 5px;
+    height: $height;
+    // @media (max-width: $small-screens) {
+    //   top: 0;
+    // }
+    // background: #828ac4;
+    background: #344a5f;
+    border-radius: 3px;
+    // border-bottom: 3px solid #1d2935;
+    z-index: 99999999999999;
+    svg.dropdown-button {
+      cursor: pointer;
+      height: $nav-height - 18px;
+      width: $nav-height - 15px;
+      // background: #333a61;
+      background: #1d2935;
+      padding: $nav-padding + 5px;
+      padding-left: 8px;
+      border-radius: 1px;
+      border-bottom: 3px solid #1d2935;
+      z-index: 999999999999 #{!important};
+    }
+  }
+  div.super-admin-body {
+    position: relative;
+    top: $nav-height;
+    margin: auto;
+    max-width: $body-max-width + 128px;
+    padding: 30px 15px;
+    div[class^="col-"] {
+      margin-bottom: 20px;
+    }
+    .m0 {
+      margin: 0 #{!important};
+    }
+    div.short-description-tab {
+      transition: 0.3s all ease-in-out;
+      &:hover {
+        transform: scale(1.04);
+        transition: 0.3s all ease-in-out;
+      }
+      box-shadow: 0 0 10px 1px #1d2935;
+      width: 95%;
+      @media (max-width: $small-screens) {
+        width: 100%;
+      }
+      min-height: 80px;
+      background: #1d2935;
+      border-radius: 3px;
+      padding: 15px;
+      span {
+        display: block;
+        font-family: $font-family;
+        &:first-child {
+          white-space: nowrap;
+          color: #6a8bad;
+          font: {
+            weight: bold;
+            size: 1em;
+          }
+          margin-bottom: 10px;
+        }
+        &:nth-child(2) {
+          color: $color;
+          font: {
+            weight: bolder;
+            size: 1.3em;
+          }
+        }
+      }
+      svg {
+        color: #2d3843;
+      }
+    }
+    div.dynamic-dash-body {
+      width: 98.7%;
+      @media (max-width: $medium-screens) {
+        width: 100%;
+      }
+      background: #1d2935;
+      box-shadow: 0 0 10px 1px #1d2935;
+      border-radius: 3px;
+      margin-top: 20px;
+      max-height: 500px;
+      padding: 12px;
+      div.section-content {
+        padding: 10px;
+        padding-top: 20px;
+        color: white;
+        max-height: 400px;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+          width: 3px;
+          border-radius: 3px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: #828ac4;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $color;
+          border-radius: 3px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background: #ffffff;
+        }
+      }
+      h2.section-title {
+        color: #fff;
+        font: {
+          family: $font-family;
+          size: 0.9em;
+        }
+        text-transform: capitalize;
+        &::after {
+          background: $color;
+          content: "";
+          display: block;
+          height: 3px;
+          max-width: 50px;
+          width: 90%;
+          border-radius: 4px;
+          margin-top: 5px;
+          clear: both;
+        }
+      }
+      @media (max-width: $small-screens) {
+        &.mr {
+          margin-top: 3px;
+        }
+      }
+      &.mr {
+        width: 100%;
+        position: relative;
+        right: 0;
+      }
+      @media (min-width: $small-screens + 1) {
+        &.mr {
+          width: 96.5%;
+        }
+      }
+    }
+  }
+  nav.side-nav {
+    position: absolute;
+    top: $height;
+    width: 250px;
+    @media (max-width: $small-screens) {
+      width: 280px;
+    }
+    min-height: 100vh;
+    background: #1d2935;
+    z-index: 9999999990;
+    box-shadow: 0 0 15px 1px #1d2935;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 15px 0;
+    &::-webkit-scrollbar {
+      width: 3px;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #ffffff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #828ac4;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #ffffff;
+    }
+    font-family: $font-family;
+    ul {
+      list-style-type: none;
+    }
+    a {
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      height: 45px;
+      padding: {
+        left: 15px;
+        top: 12px;
+      }
+      &.active,
+      &.active:hover {
+        background: #1f3139;
+        border-left: 2px solid $color;
+      }
+      color: white;
+      font: {
+        weight: normal;
+        size: 0.9em;
+      }
+      &:hover {
+        background: #4e6e8e;
+      }
+      li {
+        svg {
+          color: $color;
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+}
+
+.m0 {
+  margin: 0;
+}
+table.pharmacies,
+table.orders,
+table.products,
+table.categories {
+  overflow-x: scroll #{!important};
+  @media (max-width: $small-screens) {
+    width: 500px;
+    &::-webkit-scrollbar {
+      height: 3px #{!important};
+      width: 3px;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #828ac4;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $color;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #ffffff;
+    }
+  }
+  // overflow-x: scroll;
+  font-family: $font-family;
+  tr {
+    th {
+      // @media (max-width: $small-screens) {
+      // display: none;
+      // }
+      color: $color;
+      font: {
+        size: 0.8em;
+        weight: bold;
+      }
+      height: 35px;
+      width: 300px #{!important};
+      background: #1f3139;
+      text-align: left;
+      padding-left: 10px;
+      &:not(:last-child) {
+        border-right: 2px solid #304356;
+      }
+    }
+    &:not(:first-child) {
+      padding: {
+        top: 8px;
+        bottom: 10px;
+      }
+      height: 45px;
+      font: {
+        size: 0.7em;
+      }
+      &:nth-child(odd) {
+        background: #2d3843;
+      }
+      td {
+        padding-left: 10px;
+        color: grey;
+        &:not(:last-child) {
+          border-right: 2px solid #304356;
+        }
+      }
+    }
+  }
+}
+div#modal {
+  position: fixed;
+  padding: 10px 15px;
+  padding-left: 40px;
+  top: -15px #{!important};
+  left: -20px #{!important};
+  background: #00000080;
+  width: 105vw #{!important};
+  height: 110vh #{!important};
+  z-index: 999999999;
+  display: flex;
+  div.modal-body {
+    font-family: $font-family;
+    min-height: 110px;
+    max-width: 500px;
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 40px;
+    margin: auto;
+    background: #304356;
+    box-shadow: 0 0 10px 1px #6a8bad;
+    border-radius: 5px;
+    p {
+      display: block;
+      font: {
+        size: 1.2em;
+        weight: bold;
+      }
+      width: 12px;
+      float: right;
+      cursor: pointer;
+      &:active {
+        outline: 0.6px dashed #42b983;
+      }
+    }
+  }
+}

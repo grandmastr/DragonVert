@@ -1,0 +1,17 @@
+$selection-color: #c24461;
+// $theme-color: #4d9de0;
+// $theme-color: #c24461;
+$theme-color: #19253a;
+$body-max-width: 1200px;
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+//$nav-height: 65px;
+$nav-height: 60px;
+$nav-content-height: 40px;
+$nav-padding: ($nav-height - $nav-content-height) / 2;
+// $pop-green: #f8e804;
+$pop-green: #fab000;
+$card-height: 300px;
+$footer-height: $nav-height;
+$placeholder-transform: none;
+$quickNavPercentage: (40/100);

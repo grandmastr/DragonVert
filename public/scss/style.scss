@@ -1,0 +1,69 @@
+@import "./modules/variables";
+
+body {
+  &::-webkit-scrollbar {
+    width: 3px;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #000000;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $pop-green;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+  }
+}
+
+div.view-more {
+  position: relative;
+  top: 80px;
+  max-width: 80px;
+  margin: auto;
+  right: 0;
+  a {
+    color: $theme-color;
+    font: {
+      family: $font-family;
+    }
+    text-transform: capitalize;
+    text-decoration: none;
+  }
+  margin-bottom: 30px;
+}
+
+@import "./modules/mixins";
+@import "./modules/grid";
+@import "./modules/reset";
+@import "./modules/fonts";
+@import "./modules/headers";
+@import "./modules/input";
+@import "./modules/pagination";
+
+// pages
+@import "./pages/home.scss";
+@import "./pages/cart";
+@import "./pages/about";
+@import "./pages/login";
+@import "./pages/register";
+@import "./pages/contact";
+@import "./pages/productDetails";
+@import "./pages/categories";
+@import "./partials/category";
+@import "./pages/dashboard";
+@import "./pages/superAdmin";
+@import "./pages/searchPage";
+@import "./pages/unauthorized";
+
+// components
+@import "./components/nav";
+@import "./partials/productListing";
+@import "./components/footer";
+@import "./partials/productForm";
+@import "./modules/loader";
+@import "./components/sliderProduct";

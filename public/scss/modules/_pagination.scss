@@ -1,0 +1,27 @@
+div.pagination {
+  max-width: 250px;
+  margin: auto;
+  ul.pagination-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    li {
+      border-radius: 1px;
+      border: 1px solid $theme-color;
+      background: #ffffff;
+      max-width: 30px;
+      height: 35px;
+      padding: 5px 8px;
+      cursor: pointer;
+      transition: 0.2s all ease-in-out;
+      font: {
+        family: $font-family;
+        size: 1em;
+      }
+      &:hover {
+        background: #f5f5f5;
+        transition: 0.2s all ease-in-out;
+      }
+    }
+  }
+}

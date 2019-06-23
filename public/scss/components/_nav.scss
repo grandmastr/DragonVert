@@ -1,0 +1,388 @@
+/*
+	Navbar - black background
+*/
+div.quickNav {
+  @media (max-width: $small-screens) {
+    display: none #{!important};
+  }
+  z-index: 9901;
+  position: fixed;
+  border-bottom: 3px solid #fab000;
+  width: 100% #{!important};
+  min-height: ($quickNavPercentage * $nav-height) - 10px;
+  padding: $quickNavPercentage * $nav-padding;
+  padding-right: $nav-height/2;
+  background: #f1f3f4;
+  font: {
+    family: $font-family;
+    weight: normal;
+    size: 0.8em;
+  }
+  ul {
+    float: right;
+    display: flex;
+    li {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+      svg {
+        cursor: pointer;
+        color: $pop-green;
+        font: {
+          size: 0.9em;
+        }
+        margin-right: 4px;
+      }
+      a {
+        color: $theme-color;
+        text-decoration: none;
+        transition: 0.2s all ease-in-out;
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: $pop-green;
+          text-decoration-skip-ink: auto;
+          transition: 0.2s all ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+nav.nav {
+  position: fixed;
+  top: $quickNavPercentage * $nav-height;
+  @media (max-width: $small-screens) {
+    top: 0;
+  }
+  height: $nav-height;
+  width: 100vw;
+  // background: #eef0f0;
+  background: $theme-color;
+  padding: $nav-padding;
+  z-index: 9900;
+  color: #ffffff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 0 5px 2px #868686;
+  div.quick-nav {
+    height: 100px;
+    background: red;
+  }
+  span {
+    > img {
+      max-width: 160px;
+      width: 80%;
+      height: 68%;
+      position: relative;
+      top: 1px;
+      @media (max-width: $small-screens) {
+        left: 2px;
+      }
+      user-select: none;
+    }
+  }
+  svg.dropdown-button {
+    @media (min-width: $large-screens) {
+      // cursor: pointer;
+    }
+    position: absolute;
+    top: ($nav-height / 2) - 8px;
+    left: 88%;
+    @media (min-width: $small-screens) {
+      left: 94%;
+    }
+    height: 18px;
+    + div {
+      display: block;
+      position: absolute;
+      display: block;
+      top: $nav-height - 5px;
+      right: 45px;
+      @media (max-width: $small-screens) {
+        right: 18px;
+      }
+      height: auto;
+      max-width: 90vw;
+      max-height: 80vh;
+      overflow-y: scroll;
+      //   background: #eef0f0;
+      background: white;
+      padding: 15px 12px;
+      border-radius: 5px;
+      box-shadow: 0 0 15px 1px grey;
+      z-index: 9990;
+      &::-webkit-scrollbar {
+        width: 3px;
+        border-radius: 3px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #eef0f0;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $pop-green;
+        border-radius: 3px;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #eef0f0;
+      }
+
+      span {
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+        border-radius: 3px;
+        &:hover {
+          background: #e0e0e0;
+          cursor: pointer;
+        }
+        display: block;
+        padding: 8px 5px;
+        a {
+          font: {
+            size: 0.9em;
+            family: $font-family;
+          }
+          text-decoration: none;
+          // color: #000000;
+          // color: #ffffff;
+          color: $theme-color;
+        }
+      }
+    }
+  }
+  ul {
+    float: right;
+    position: relative;
+    top: 10px;
+    display: flex;
+    li {
+      @media (max-width: 375px) {
+        &.show-for-mobile {
+          position: relative;
+          left: -45px #{!important};
+          &.account {
+            margin-right: 15px #{!important};
+          }
+        }
+      }
+      @media (min-width: $medium-screens) and (max-width: 1024px) {
+        left: -30px #{!important};
+      }
+      @media (max-width: $large-screens - 1) {
+        &:not(.show-for-mobile) {
+          display: none;
+        }
+        &.show-for-mobile {
+          position: relative;
+          left: -50px;
+          &.account {
+            margin-right: 20px;
+          }
+        }
+      }
+      @media (min-width: $large-screens) {
+        &:not(.show-for-mobile) {
+          display: relative;
+          left: -30px;
+        }
+      }
+      position: relative;
+      left: 16px #{!important};
+      // color: #202020;
+      color: white;
+      font: {
+        family: $font-family;
+        weight: bolder;
+        size: 82%;
+      }
+      text-transform: uppercase;
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+      &:nth-child(7) {
+        top: -1px;
+        margin-left: 20px;
+        font-size: 1em;
+        @media (min-width: $large-screens) {
+          top: -3px;
+          font-size: 1.1em #{!important};
+        }
+      }
+      // &:nth-child(8) {
+      // 	// top: -1px;
+      // }
+      &:nth-child(7),
+      &:nth-child(8) {
+        position: relative;
+        @media (max-width: 400px) {
+          left: -40px #{!important};
+        }
+        @media (min-width: 401px) and (max-width: $large-screens - 1) {
+          left: -60px #{!important};
+        }
+        @media (min-width: $large-screens) {
+          margin-right: 40px;
+        }
+      }
+      &:active,
+      &:hover {
+        opacity: 0.7;
+      }
+      a {
+        text-decoration: none;
+        &.router-link-active {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+  .nav-container {
+    max-width: $body-max-width;
+    width: 98%;
+    margin: auto;
+    + div.search-nav-for-mobile {
+      width: 100vw;
+      height: $nav-height - 20px #{!important};
+      padding: ($nav-height - 45px) / 2;
+      position: relative;
+      top: $nav-height - 25px;
+      background: #eef0f0;
+      margin-left: -12.8px #{!important};
+      // padding: 8px 16px #{!important};
+      input[type="search"] {
+        border: 1.3px solid $theme-color;
+        border-radius: 2px;
+        width: 80%;
+        background: #ffffff #{!important};
+        @media (min-width: $small-screens) and (max-width: $medium-screens - 1px) {
+          width: 92%;
+        }
+        min-width: 70vw;
+        padding: 2px 5px;
+        font-family: $font-family;
+        &::placeholder {
+          font: {
+            weight: normal;
+            size: 0.9em;
+            family: $font-family;
+          }
+        }
+        + button.mobile-search-button {
+          height: 25px;
+          margin-left: 5px #{!important};
+          background: $theme-color;
+          border: none;
+          font: {
+            weight: normal;
+            family: $font-family;
+            size: 0.8em;
+          }
+          color: #ffffff;
+          position: absolute;
+          right: 20px;
+        }
+      }
+      @media (min-width: $medium-screens + 1px) {
+        display: none;
+      }
+    }
+  }
+  .fa-shopping-cart {
+    + span.cart-badge {
+      font: {
+        size: 0.7em;
+        width: bolder;
+        family: $font-family;
+      }
+      border-radius: 48%;
+      padding: {
+        top: 1px;
+        left: 3.8px;
+        right: 3.6px;
+      }
+      width: auto;
+      height: 14px;
+      background: $pop-green;
+      color: #ffffff;
+      position: absolute;
+      top: -5px;
+    }
+  }
+}
+
+svg.fa-user-circle {
+  // color: $theme-color;
+}
+
+div.menu-for-mobile {
+  @media (min-width: $medium-screens + 1px) {
+    display: none;
+  }
+  span {
+    color: $theme-color;
+    font: {
+      weight: normal;
+      family: $font-family;
+    }
+    a {
+      &.router-link-active {
+        opacity: 0.7;
+      }
+    }
+    text-transform: capitalize;
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+span.brand-name {
+  text-decoration: none;
+  margin: auto;
+  display: flex;
+  max-width: 135px;
+  float: left;
+  color: #ffffff;
+  font: {
+    weight: bolder;
+    size: 1.2em;
+    family: $font-family;
+  }
+  position: relative;
+  top: 5px;
+  left: -10px;
+  @media (max-width: $small-screens) {
+    top: 7px;
+    left: 0.5px;
+  }
+  @media (min-width: $small-screens + 1) and (max-width: $large-screens) {
+    left: 10px;
+  }
+}
+
+.user {
+  margin-right: 1px;
+  @media (min-width: 1360px) {
+    right: -30px #{!important};
+  }
+  position: relative;
+  right: 38px;
+  @media (min-width: $extra-large-screens) {
+    right: 35px;
+  }
+}
+
+.cart {
+  margin-right: 15px;
+  @media (min-width: 1360px) {
+    right: -30px #{!important};
+  }
+  position: relative;
+  right: 38px;
+  @media (min-width: $extra-large-screens) {
+    right: 35px;
+  }
+}

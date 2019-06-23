@@ -1,0 +1,192 @@
+div.product-detail-page {
+  position: relative;
+  top: $nav-height + ($quickNavPercentage * $nav-height);
+  max-width: $body-max-width;
+  margin: auto;
+  padding: 60px 10px;
+  main.product-detail-body {
+    max-width: 980px;
+    margin: auto;
+    h2.product-name {
+      display: block;
+      text-align: center;
+      color: $theme-color;
+      font: {
+        size: 1.3em;
+        family: $font-family;
+      }
+      margin-bottom: 30px;
+      &::after {
+        content: "";
+        display: block;
+        height: 3px;
+        max-width: 50px;
+        width: 90%;
+        border-radius: 4px;
+        position: relative;
+        top: -7px;
+        margin: auto;
+        background: $pop-green;
+        margin-top: 10px;
+        clear: both;
+      }
+    }
+    div > div > div:not(.jumbo) {
+      &:first-child {
+        height: 380px;
+        margin: 0;
+        border-radius: 5px;
+        background: {
+          size: contain;
+          repeat: no-repeat;
+          origin: center;
+        }
+      }
+      &:nth-child(2) {
+        @media (max-width: $small-screens) {
+          margin-top: 20px;
+          padding: 20px 5px;
+        }
+        margin: 0;
+        padding: 15px 25px;
+        h3.sub-t {
+          display: block;
+          color: #000000;
+          font: {
+            weight: bolder;
+            family: $font-family;
+          }
+          @media (max-width: $small-screens) {
+            &::after {
+              content: "";
+              display: block;
+              height: 3px;
+              max-width: 70px;
+              width: 90%;
+              border-radius: 4px;
+              position: relative;
+              top: -5px;
+              background: $pop-green;
+              margin-top: 10px;
+              clear: both;
+            }
+          }
+          + p {
+            margin: 15px 0;
+            color: #3a3a3a;
+            font: {
+              size: 0.85em;
+              family: $font-family;
+              weight: normal;
+            }
+            a {
+              color: $theme-color;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mt-20 {
+  margin-top: 30px;
+}
+
+p.description {
+  font-style: italic #{!important};
+  span {
+    font: {
+      family: $font-family #{!important};
+      size: 1em #{!important};
+    }
+  }
+}
+
+div.detail-buttons {
+  margin: 20px 0 40px 0;
+  button.add-to-cart-button {
+    float: right;
+    color: #fff;
+    background: $theme-color;
+    // background: #b10000;
+    height: 38px;
+    padding: 0 15px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    font: {
+      //   weight: normal;
+      weight: bold;
+      family: $font-family;
+      size: 0.8em;
+    }
+    &:hover,
+    &:focus {
+      background: #255020;
+    }
+    .fa-plus {
+      color: #fff;
+      font-size: 0.8em;
+      font-weight: bold;
+      position: relative;
+      top: -1px;
+      margin-left: 5px;
+    }
+  }
+
+  button.remove-from-cart-button {
+    float: right;
+    color: #fff;
+    background: $pop-green;
+    // background: #b10000;
+    height: 38px;
+    padding: 0 15px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    font: {
+      //   weight: normal;
+      weight: bold;
+      family: $font-family;
+      size: 0.8em;
+    }
+    &:hover,
+    &:focus {
+      background: $pop-green;
+    }
+  }
+
+  button.buy-now-button {
+    color: $theme-color;
+    background: transparent;
+    height: 34px;
+    padding: 0 15px;
+    border-radius: 3px;
+    border: 2px solid $theme-color;
+    cursor: pointer;
+    font: {
+      weight: bold;
+      family: $font-family;
+      size: 0.8em;
+    }
+    &:hover,
+    &:focus {
+      color: #255020;
+      border: 2px solid #255020;
+    }
+  }
+}
+
+p.product-price {
+  color: $pop-green;
+  font: {
+    size: 1.3em;
+    family: $font-family;
+  }
+  &::before {
+    content: "\20A6";
+    margin-right: 1px;
+  }
+}

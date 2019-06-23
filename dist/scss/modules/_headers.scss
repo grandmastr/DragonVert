@@ -1,0 +1,70 @@
+h2.search-result-header {
+  display: block;
+  position: relative;
+  top: $nav-height;
+  color: #000000;
+  text-transform: capitalize;
+  font: {
+    weight: bolder;
+    family: $font-family;
+  }
+  &::after {
+    content: "";
+    display: block;
+    height: 3px;
+    max-width: 80px;
+    width: 90%;
+    border-radius: 4px;
+    background: $pop-green;
+    margin-top: 10px;
+    clear: both;
+  }
+  top: 0 #{!important};
+  margin-bottom: 25px;
+  text-transform: none #{!important};
+}
+h2.category-header {
+  display: block;
+  position: relative;
+  top: $nav-height;
+  color: #000000;
+  text-transform: capitalize;
+  font: {
+    weight: bolder;
+    family: $font-family;
+  }
+  &::after {
+    content: "";
+    display: block;
+    height: 3px;
+    max-width: 80px;
+    width: 90%;
+    border-radius: 4px;
+    background: $pop-green;
+    margin-top: 10px;
+    clear: both;
+  }
+}
+h2.cart-header {
+  display: block;
+  position: relative;
+  top: -20px;
+  color: #000000;
+  font: {
+    weight: bolder;
+    family: $font-family;
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -1.5px;
+    height: 3px;
+    max-width: 50px;
+    width: 90%;
+    border-radius: 4px;
+    background: $pop-green;
+    margin-top: 10px;
+    clear: both;
+  }
+}

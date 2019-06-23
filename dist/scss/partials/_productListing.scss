@@ -1,0 +1,194 @@
+div.product-listing {
+  position: relative;
+  top: $nav-height - 20px;
+  @media (min-width: $medium-screens) {
+  }
+  max-width: $body-max-width;
+  width: 98%;
+  margin: auto;
+  h2 {
+    position: relative;
+    left: 5px;
+  }
+}
+div.products-main-card {
+  position: relative;
+  top: $nav-height + 10px;
+  // background: #f3f3f3;
+  border-radius: 5px;
+  max-width: $body-max-width - s120;
+  margin: auto;
+  padding: 10px 8px;
+  @media (max-width: $small-screens) {
+    right: -2.6px;
+  }
+  div.product-card {
+    a {
+      text-decoration: none;
+    }
+    width: 98%;
+    height: $card-height;
+    padding: 3px 10px;
+    border-bottom: 1px solid #c4c7c6;
+    @media (max-width: $small-screens) {
+      height: 300px;
+      &:nth-child(2n - 1) {
+        border-right: 1px solid #c4c7c6;
+      }
+    }
+    @media (min-width: $small-screens + 1) {
+      &:not(:nth-child(4n)) {
+        border-right: 1px solid #c4c7c6;
+      }
+      &:last-child {
+        border-right: none;
+      }
+    }
+    &:hover {
+      p.add-to-cart-button {
+        display: block;
+        margin: auto;
+        button {
+          cursor: pointer;
+          height: 32px;
+          background: $theme-color;
+          color: white;
+          font: {
+            size: 0.8em;
+            family: $font-family;
+          }
+          border-radius: 3px;
+          border: none;
+          float: right;
+        }
+      }
+      p.remove-from-cart-button {
+        display: block;
+        margin: auto;
+        button {
+          cursor: pointer;
+          height: 32px;
+          background: $pop-green;
+          color: white;
+          font: {
+            size: 0.8em;
+            family: $font-family;
+          }
+          float: right;
+          border-radius: 3px;
+          border: none;
+          outline: none #{!important};
+        }
+      }
+      p.add-to-cart-button,
+      p.remove-from-cart-button {
+        position: relative;
+        top: -8px;
+        z-index: 9000;
+      }
+    }
+    figure {
+      height: 70%;
+      @media (max-width: $small-screens) {
+        height: 80%;
+      }
+      background: {
+        size: contain;
+        origin: center;
+        repeat: no-repeat;
+        clip: border-box;
+      }
+      margin: {
+        top: 10px;
+        bottom: 10px;
+      }
+    }
+    figcaption {
+      height: 30%;
+      @media (max-width: $small-screens) {
+        height: 20%;
+        position: relative;
+        top: -65px;
+      }
+      font: {
+        family: $font-family;
+      }
+      span.product-name {
+        font-size: 0.9em;
+        height: 300px #{!important};
+      }
+      p.product-price {
+        font-size: 0.8em;
+        color: $theme-color;
+        &::before {
+          content: "\20A6";
+          margin-right: 1px;
+          // @media(max-width: $small-screens) {
+          // 	margin-right: 1px;
+          // }
+        }
+      }
+    }
+    p.add-to-cart-button {
+      display: none;
+    }
+    p.remove-from-cart-button {
+      display: none;
+    }
+  }
+}
+
+div.clearfix {
+  height: 100px;
+}
+
+div.slider-product {
+  a {
+    text-decoration: none;
+    display: flex;
+    height: 280px;
+    width: 220px;
+    // background: red;
+    @media (max-width: $small-screens) {
+      height: 200px;
+      width: 150px;
+    }
+    figure {
+      width: 100% #{!important};
+      figcaption {
+        margin-top: 10px;
+        padding: 2px 5px;
+      }
+      h1,
+      span {
+        font: {
+          family: $font-family;
+        }
+      }
+      h1 {
+        color: $theme-color;
+        font: {
+          family: $font-family;
+          weight: bold;
+          size: 1.1em;
+        }
+      }
+      span {
+        color: #000000;
+        font: {
+          weight: normal;
+          size: 0.8em;
+        }
+        &::before {
+          content: "\20A6";
+          margin-right: 3px;
+        }
+      }
+    }
+    div.image {
+      width: 100%;
+      height: 80%;
+      background: $theme-color;
+    }
+  }
+}

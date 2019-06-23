@@ -1,0 +1,31 @@
+div.contact {
+  position: relative;
+  top: $nav-height + ($quickNavPercentage * $nav-height);
+  padding: 20px;
+  padding-bottom: 80px;
+  display: flex;
+  min-height: 90vh;
+  background: #fcfafa;
+  main.contact-form-body {
+    border-radius: 3px;
+    margin: auto;
+    max-width: 600px;
+    width: 100%;
+    background: #ffffff;
+    padding: 15px 20px;
+    form.contact-form {
+      div.contact-split {
+        @media (min-width: $medium-screens) {
+          input {
+            width: 96% #{!important};
+          }
+        }
+      }
+      .button-submit {
+        button {
+          float: right;
+        }
+      }
+    }
+  }
+}

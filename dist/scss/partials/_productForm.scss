@@ -1,0 +1,28 @@
+div.product-form{
+	position: relative;
+	top: $nav-height + 30px;
+}
+
+main.product-form-page{
+	padding: 70px 10px 140px 10px;
+	@media(max-width: $small-screens) {
+		padding:{
+			top: 40px #{!important};
+			bottom: 80px #{!important};
+		}
+	}
+	max-width: 800px;
+	margin: auto;
+	width: 98%;
+	h2.accounts{
+		position: relative;
+		top: -30px;
+	}
+	form{
+		label{
+			font:{
+				family: $font-family;
+			}
+		}
+	}
+}

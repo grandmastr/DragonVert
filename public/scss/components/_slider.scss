@@ -1,0 +1,101 @@
+/*
+	Slider
+*/
+
+div.slider-container {
+  position: relative;
+  top: $nav-height + ($quickNavPercentage * $nav-height);
+  height: 200px;
+  @media (max-width: $small-screens) {
+    top: $nav-height - 7px #{!important};
+    // height: 70vh #{!important};
+    max-height: 50vh;
+  }
+  @media (max-width: $medium-screens) {
+    top: ($nav-height * 2) - 10px;
+  }
+  display: flex;
+  margin: auto;
+  padding-top: 50px;
+  background: {
+    position: 50% 50%;
+    size: cover #{!important};
+    origin: content-box;
+    repeat: no-repeat;
+  }
+  object-fit: contain;
+  transition: 0.3s all ease-in-out;
+  -moz-transition: 0.3s all ease-in-out;
+  -webkit-transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  // .slider-text {
+  //   margin: auto;
+  //   text-align: center;
+  //   h2,
+  //   p {
+  // 	@media (max-width: $small-screens) {
+  // 	  margin: auto;
+  // 	  max-width: 78%;
+  // 	}
+  //   }
+  //   h2 {
+  // 	background: linear-gradient(
+  // 	  to right,
+  // 	  #df5168,
+  // 	  #f15565,
+  // 	  #df0266,
+  // 	  #984472,
+  // 	  #9c4471,
+  // 	  #980671
+  // 	);
+  // 	-webkit-background-clip: text;
+  // 	-webkit-text-fill-color: transparent;
+  // 	margin-bottom: 5px;
+  // 	font: {
+  // 	  family: "Nexa Bold";
+  // 	  size: 1.7em;
+  // 	}
+  //   }
+  //   p {
+  // 	color: #ffffff;
+  // 	font: {
+  // 	  family: "Nexa Light";
+  // 	  size: 1.3em;
+  // 	}
+  //   }
+  // }
+  ul.slider-control {
+    position: absolute;
+    right: 20px;
+    bottom: 10%;
+    @media (max-width: $small-screens) {
+      //   top: 30%;
+      //   bottom: 10%;
+      right: 10px;
+    }
+    // @media (min-width: $small-screens + 1) and (max-width: $medium-screens) {
+    // //   top: 30%;
+    // }
+    // @media (min-width: $medium-screens + 1) {
+    //   //   top: 40%;
+    // //   bottom: 10%;
+    // }
+    li {
+      display: flex;
+      height: 9px;
+      width: 9px;
+      background: transparent;
+      // border: 1px solid $theme-color;
+      border: 1.4px solid whitesmoke;
+      border-radius: 50%;
+      cursor: pointer;
+      &.active {
+        background: white;
+        border-radius: 4px #{!important};
+      }
+      &:not(:last-child) {
+        margin-bottom: 8px #{!important};
+      }
+    }
+  }
+}

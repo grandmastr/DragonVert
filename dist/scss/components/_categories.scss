@@ -1,0 +1,14 @@
+main#category {
+  max-width: $body-max-width;
+  margin: auto;
+  position: relative;
+  top: 80px;
+  padding: 2px 15px;
+  .category-header {
+    display: block;
+  }
+  // .category-products{
+  // 	position: relative;
+  // 	top: $nav-height + 10px;
+  // }
+}

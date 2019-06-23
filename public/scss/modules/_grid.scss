@@ -1,0 +1,207 @@
+/* Grid system by theGrandmaster using flexbox*/
+// breakpoints(in terms of minimum widths)
+
+$extra-small-screens: 0;
+$small-screens: 576px;
+$medium-screens: 768px;
+$large-screens: 992px;
+$extra-large-screens: 1200px;
+
+// hiding contents
+.hide-small-only {
+  @media (min-width: $extra-small-screens + 1) and (max-width: $small-screens) {
+    display: none #{!important};
+  }
+}
+
+.hide-small {
+  @media (max-width: $small-screens) {
+    display: none #{!important};
+  }
+}
+
+.hide-medium-only {
+  @media (min-width: $small-screens + 1) and (max-width: $medium-screens) {
+    display: none #{!important};
+  }
+}
+.hide-medium {
+  @media (max-width: $medium-screens) {
+    display: none #{!important};
+  }
+}
+
+.hide-large-only {
+  @media (min-width: $medium-screens + 1) and (max-width: $large-screens) {
+    display: none #{!important};
+  }
+}
+
+.hide-large {
+  @media (max-width: $large-screens) {
+    display: none #{!important};
+  }
+}
+
+.hide-extra-large-only {
+  @media (min-width: $large-screens + 1) and (max-width: $extra-large-screens) {
+    display: none #{!important};
+  }
+}
+
+.hide-extra-large {
+  @media (max-width: $extra-large-screens) {
+    display: none #{!important};
+  }
+}
+
+// the wrapper for the content
+div.grid-wrapper {
+  margin-top: 10px; //this can be overwritten by adding #{!important}
+  width: inherit;
+
+  div.grid-row {
+    [class^="col-"] {
+      margin: auto 0;
+    }
+
+    @media (min-width: $extra-small-screens) {
+      @include flex-container;
+      @for $i from 0 through 12 {
+        $value: ($i/12) * percentage(1);
+        .col-xsmall-#{$i} {
+          max-width: $value;
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 $value;
+          flex: 0 0 $value;
+        }
+      }
+    }
+
+    @media (min-width: $small-screens) {
+      @include flex-container;
+      @for $i from 0 through 12 {
+        $value: ($i/12) * percentage(1);
+        .col-small-#{$i} {
+          max-width: $value;
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 $value;
+          flex: 0 0 $value;
+        }
+      }
+    }
+
+    @media (min-width: $medium-screens) {
+      @include flex-container;
+      @for $i from 0 through 12 {
+        $value: ($i/12) * percentage(1);
+        .col-medium-#{$i} {
+          max-width: $value;
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 $value;
+          flex: 0 0 $value;
+        }
+      }
+    }
+
+    @media (min-width: $large-screens) {
+      @include flex-container;
+      @for $i from 0 through 12 {
+        $value: ($i/12) * percentage(1);
+        .col-large-#{$i} {
+          max-width: $value;
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 $value;
+          flex: 0 0 $value;
+        }
+      }
+    }
+
+    @media (min-width: $extra-large-screens) {
+      @include flex-container;
+      @for $i from 0 through 12 {
+        $value: ($i/12) * percentage(1);
+        .col-xlarge-#{$i} {
+          max-width: $value;
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 $value;
+          flex: 0 0 $value;
+        }
+      }
+    }
+  }
+}
+
+// @function addColumn($n) {
+//     @return {
+
+//     }
+// }
+[class^="col-"] {
+  margin: auto 0;
+}
+
+@media (min-width: $extra-small-screens) {
+  @include flex-container;
+  @for $i from 0 through 12 {
+    $value: ($i/12) * percentage(1);
+    .col-xsmall-#{$i} {
+      max-width: $value;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 $value;
+      flex: 0 0 $value;
+    }
+  }
+}
+
+@media (min-width: $small-screens) {
+  @include flex-container;
+  @for $i from 0 through 12 {
+    $value: ($i/12) * percentage(1);
+    .col-small-#{$i} {
+      max-width: $value;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 $value;
+      flex: 0 0 $value;
+    }
+  }
+}
+
+@media (min-width: $medium-screens) {
+  @include flex-container;
+  @for $i from 0 through 12 {
+    $value: ($i/12) * percentage(1);
+    .col-medium-#{$i} {
+      max-width: $value;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 $value;
+      flex: 0 0 $value;
+    }
+  }
+}
+
+@media (min-width: $large-screens) {
+  @include flex-container;
+  @for $i from 0 through 12 {
+    $value: ($i/12) * percentage(1);
+    .col-large-#{$i} {
+      max-width: $value;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 $value;
+      flex: 0 0 $value;
+    }
+  }
+}
+
+@media (min-width: $extra-large-screens) {
+  @include flex-container;
+  @for $i from 0 through 12 {
+    $value: ($i/12) * percentage(1);
+    .col-xlarge-#{$i} {
+      max-width: $value;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 $value;
+      flex: 0 0 $value;
+    }
+  }
+}

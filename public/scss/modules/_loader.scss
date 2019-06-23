@@ -1,0 +1,28 @@
+div#loader{
+    box-sizing: border-box;
+    position: relative;
+    top: $nav-height;
+    min-height: 500px;
+    height: inherit;
+    height: fit-content;
+    display: flex;
+    background:  transparent;
+    div.loader{
+        max-width: 300px;
+        margin: auto;
+        img{
+            // height: 40px;
+            user-select: none;
+        }
+        // h2{
+        //     text-align: center;
+        //     font:{
+        //         family: $font-family;
+        //         size: 1.5em;
+        //     }
+        //     text-transform: uppercase;
+        //     // color: $theme-color;
+        //     // color: $pop-green;
+        // }
+    }
+}
