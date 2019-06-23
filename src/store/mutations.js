@@ -149,10 +149,10 @@ export const cartMutations = {
   [REMOVE_FROM_CART]: (state, payload) => {
     const index = state.cart.findIndex(p => p.id === payload);
     state.cart.splice(index, 1);
-    console.log(state.cart, state.cart.length, index);
   },
   [UPDATE_CART]: (state, payload) => {
     state.cart = payload;
+    state.cartLoading = false;
   }
 };
 

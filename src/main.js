@@ -7,6 +7,8 @@ import vco from "v-click-outside";
 import VueHZoom from "vue-h-zoom";
 // import "./registerServiceWorker";
 
+const log = console.log;
+
 import { library } from "@fortawesome/fontawesome-svg-core";
 
 import {
@@ -67,48 +69,7 @@ require("dotenv").config();
 
 Vue.prototype.$http = Axios;
 
-Vue.config.errorHandler = err => {
-  console.log("New Error man: ", err);
-};
-
 const token = localStorage.getItem("token");
-
-Axios.interceptors.response.use(
-  response => {
-    return response;
-  },
-  error => {
-    console.log(error);
-    const originalRequest = error.config;
-    // token expired
-    // if (error.response.status === 401) {
-    //   console.log("Error 401");
-    //   originalRequest._retry = true;
-    //   store
-    //     .dispatch("refreshToken")
-    //     .then(response => {
-    //       // console.log(response)
-    //       // let token = response.data.token;
-    //       // let headerAuth = "Bearer " + response.data.token;
-    //       // store.dispatch("saveToken", token);
-    //       // Axios.defaults.headers["Authorization"] = headerAuth;
-    //       // originalRequest.headers["Authorization"] = headerAuth;
-    //       // return Axios(originalRequest);
-    //     })
-    //     .catch(error => {
-    //       // store
-    //       //   .dispatch("logout")
-    //       //   .then(() => {
-    //       //     router.push({ name: "login" });
-    //       //   })
-    //       //   .catch(() => {
-    //       //     router.push({ name: "login" });
-    //       //   });
-    //     });
-    // }
-    return Promise.reject(error);
-  }
-);
 
 if (token) Axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 

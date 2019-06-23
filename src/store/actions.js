@@ -156,8 +156,30 @@ export const productActions = {
       // commit(PRODUCT_BY_ID_SUCCESS, response.data.data.stock);
     });
   },
-  updateCart({ commit }, payload) {
-    commit(UPDATE_CART, payload);
+  updateCart({ commit }) {
+    axios
+      .get(`https://dragonvert.joppa.ng/cart/`)
+      .then(response => {
+        if (response.status === 200) {
+          commit(UPDATE_CART, response.data.data);
+        } else {
+          // console.log();
+        }
+      })
+      .catch(error => console.table(error));
+  },
+  addToCart({ commit }, data) {
+    axios(`https://dragonvert.joppa.ng/cart/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/vnd.api+json"
+      },
+      data
+    }).then(response => {
+      axios.get("https://dragonvert.joppa.ng/cart/").then(response => {
+        if (response.status === 200) commit(UPDATE_CART, response.data.data);
+      });
+    });
   }
 };
 

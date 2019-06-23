@@ -139,7 +139,7 @@ export default {
 			};
 			this.$store
 				.dispatch("login", userData)
-				.then(r => {
+				.then(() => {
 					this.submitting = false;
 					try{
 						if (Object.keys(this.$route.query).length > 0) {
@@ -166,8 +166,8 @@ export default {
 		this.authenticationErrors = this.$store.state.authErrors;
 	},
 	watch: {
-		$route: function(to, from) {
-			console.log(to);
+		$route: (to) => {
+
 		}
 	}
 };

@@ -34,7 +34,7 @@ export default new Vuex.Store({
   strict: true,
   // for state management
   state: {
-    cart: localStorage.getItem("cart") || [],
+    cart: "",
     showLoader: false,
     product: {},
     category: [],
@@ -46,7 +46,8 @@ export default new Vuex.Store({
     isLoggedIn: false,
     authError: "",
     authErrors: [],
-    merchantProducts: []
+    merchantProducts: [],
+    cartLoading: true
   },
   // actions
   actions: Object.assign(

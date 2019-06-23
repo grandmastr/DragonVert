@@ -31,8 +31,8 @@
 								<div class="show-for-mobile">
 									<vue-h-zoom class="image-thumbnail"
 												style="background-size: cover"
-												:image="product.attributes.image"
-												:image-full="product.attributes.image"
+												:image="activeImageThumbnail || product.attributes.image"
+												:image-full="activeImageThumbnail || product.attributes.image"
 												:zoom-window-size="1"
 												:zoom-level="1.8"
 												:zoom-window-x="620"

@@ -5,7 +5,7 @@
 				<button @click.prevent="addToCart(product.id)">Add To Cart</button>
 			</p>
 			<p v-else class="remove-from-cart-button">
-				<button @click.prevent="removeFromCart(id)">Remove From Cart</button>
+				<button @click.prevent="removeFromCart(product.id)">Remove From Cart</button>
 			</p>
 		</figure>
 		<figcaption>
@@ -49,17 +49,8 @@ export default {
 					}
 				}
 			};
-			axios(`https://dragonvert.joppa.ng/cart/`, {
-				method: 'POST',
-				headers: {
-					'Content-Type' : 'application/vnd.api+json'
-				},
-				data: productDetails
-			})
-					.then(response => {
-						console.log(response)
-					})
-					.catch(e => console.log(e))
+
+			this.$store.dispatch("addToCart", productDetails);
 		},
 		removeFromCart(id) {
 			this.$store.commit(REMOVE_FROM_CART, id);

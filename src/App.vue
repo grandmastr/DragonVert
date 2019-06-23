@@ -27,18 +27,31 @@ export default {
 	name: "app",
 	components: { Nav, quickNav },
 	created() {
-		this.$http.interceptors.response.use(undefined, function(e) {
-			return new Promise(function(resolve, reject) {
-				if (
-					e.status === 401 &&
-					e.config &&
-					!e.config.__isRetryRequest
-				) {
-					this.$store.dispatch("logout");
-				}
-				throw e;
-			});
+		this.$http.interceptors.response.use(response => response, error => {
+			if(error.request.status === 401) {
+				console.table(error);
+				console.log(`New error: `, error.request.status);
+				this.$store.dispatch("logout")
+						.then(() => this.$router.push("/login"));
+			}
+			return Promise.reject(error)
 		});
+
+		this.$store.dispatch("updateCart");
+
+
+		// this.$http.interceptors.response.use(undefined, function(e) {
+		// 	return new Promise(function(resolve, reject) {
+		// 		if (
+		// 			e.response.status === 401
+		// 		) {
+		// 			console.log("James Olsen");
+		// 			this.$store.dispatch("logout")
+		// 					.then(() => this.$router.push("/login"));
+		// 		}
+		// 		throw e;
+		// 	});
+		// });
 	}
 };
 </script>

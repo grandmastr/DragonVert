@@ -98,12 +98,7 @@
       o = a.n(r);
     o.a;
   },
-  "31e6": function(t, e, a) {
-    "use strict";
-    var r = a("9762"),
-      o = a.n(r);
-    o.a;
-  },
+  "2ea0": function(t, e, a) {},
   3212: function(t, e, a) {
     "use strict";
     var r = a("f4c8"),
@@ -713,7 +708,7 @@
           ]
         );
       },
-      _ = [
+      b = [
         function() {
           var t = this,
             e = t.$createElement,
@@ -796,8 +791,8 @@
           ]);
         }
       ],
-      b = a("bc3a"),
-      y = a.n(b),
+      _ = a("bc3a"),
+      y = a.n(_),
       C = function() {
         var t = this,
           e = t.$createElement;
@@ -962,9 +957,9 @@
         }
       },
       $ = O,
-      S = (a("3842"), Object(v["a"])($, f, _, !1, null, "c9dfe5d6", null)),
+      S = (a("3842"), Object(v["a"])($, f, b, !1, null, "c9dfe5d6", null)),
       E = S.exports,
-      D = {
+      q = {
         name: "app",
         components: { Nav: E, quickNav: g },
         created: function() {
@@ -979,11 +974,11 @@
           });
         }
       },
-      q = D,
-      A = (a("034f"), Object(v["a"])(q, c, l, !1, null, null, null)),
+      D = q,
+      A = (a("034f"), Object(v["a"])(D, c, l, !1, null, null, null)),
       T = A.exports,
-      j = a("8c4f"),
-      L = function() {
+      L = a("8c4f"),
+      j = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -1021,9 +1016,9 @@
       },
       I = [],
       M = {},
-      R = Object(v["a"])(M, r, o, !1, null, null, null),
-      F = R.exports,
-      U = function() {
+      U = Object(v["a"])(M, r, o, !1, null, null, null),
+      F = U.exports,
+      R = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -1110,7 +1105,7 @@
       V = [],
       z = a("a745"),
       B = a.n(z),
-      H = function() {
+      Y = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -1168,7 +1163,7 @@
           ]
         );
       },
-      Y = [],
+      H = [],
       G = (a("28a5"),
       {
         name: "product",
@@ -1221,9 +1216,9 @@
         },
         updated: function() {}
       }),
-      Q = G,
-      J = Object(v["a"])(Q, H, Y, !1, null, null, null),
-      W = J.exports,
+      J = G,
+      Q = Object(v["a"])(J, Y, H, !1, null, null, null),
+      W = Q.exports,
       Z = {
         name: "products",
         components: { Product: W, Loader: N },
@@ -1260,7 +1255,7 @@
         }
       },
       K = Z,
-      X = Object(v["a"])(K, U, V, !1, null, null, null),
+      X = Object(v["a"])(K, R, V, !1, null, null, null),
       tt = X.exports,
       et = function() {
         var t = this,
@@ -1290,7 +1285,7 @@
         }
       },
       ct = nt,
-      lt = (a("8ae9"), Object(v["a"])(ct, L, I, !1, null, "0c4b160a", null)),
+      lt = (a("8ae9"), Object(v["a"])(ct, j, I, !1, null, "0c4b160a", null)),
       ut = lt.exports,
       dt = function() {
         var t = this,
@@ -1325,61 +1320,83 @@
               "div",
               { staticClass: "cart-body" },
               [
-                t.cart.length > 0 && !t.loading
-                  ? [
-                      a("div", { staticClass: "table-container" }, [
-                        a(
-                          "table",
-                          { attrs: { id: "cartTable" } },
-                          [
-                            t._m(0),
-                            t._l(t.cart, function(e) {
-                              return a("tr", { key: e.id }, [
-                                a("td", [t._v(t._s(e.attributes.name))]),
-                                a("td", [
-                                  t._v(t._s(t.money(e.attributes.price)))
-                                ]),
-                                a("td", [t._v(t._s(e.attributes.quantity))]),
-                                a("td", [
-                                  t._v(
-                                    t._s(
-                                      t.money(
-                                        e.attributes.quantity *
-                                          e.attributes.price
-                                      )
-                                    )
-                                  )
-                                ]),
-                                a(
-                                  "td",
-                                  [
-                                    a("icon-living", {
-                                      attrs: { icon: "trash" },
-                                      on: {
-                                        click: function(a) {
-                                          return t.removeFromCart(
-                                            e.attributes.id
-                                          );
-                                        }
-                                      }
-                                    })
-                                  ],
-                                  1
-                                )
-                              ]);
-                            })
-                          ],
-                          2
-                        )
-                      ]),
-                      a("button", [
-                        t._v("\n\t\t\t\t\tProceed to checkout\n\t\t\t\t")
-                      ])
-                    ]
+                t.loading
+                  ? [a("Loader")]
                   : [
-                      a("div", { staticClass: "cart-empty" }, [
-                        t._v("There are no items in your cart")
-                      ])
+                      t.cart.length > 0
+                        ? [
+                            a("div", { staticClass: "table-container" }, [
+                              a(
+                                "table",
+                                { attrs: { id: "cartTable" } },
+                                [
+                                  t._m(0),
+                                  t._l(t.cart, function(e) {
+                                    return a("tr", { key: e.id }, [
+                                      a("td", [
+                                        t._v(
+                                          t._s(e.attributes.equipment_info.name)
+                                        )
+                                      ]),
+                                      a("td", [
+                                        t._v(
+                                          t._s(
+                                            t.money(
+                                              e.attributes.equipment_info.price
+                                            )
+                                          )
+                                        )
+                                      ]),
+                                      a("td", [
+                                        t._v(t._s(e.attributes.quantity))
+                                      ]),
+                                      a("td", [
+                                        t._v(
+                                          t._s(
+                                            t.money(
+                                              e.attributes.quantity *
+                                                e.attributes.equipment_info
+                                                  .price
+                                            )
+                                          )
+                                        )
+                                      ]),
+                                      a(
+                                        "td",
+                                        [
+                                          a("icon-living", {
+                                            staticStyle: {
+                                              "text-align": "center"
+                                            },
+                                            attrs: { icon: "trash" },
+                                            on: {
+                                              click: function(a) {
+                                                return t.removeFromCart(
+                                                  e.attributes.id
+                                                );
+                                              }
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ]);
+                                  })
+                                ],
+                                2
+                              )
+                            ]),
+                            a("button", { staticClass: "checkout-button" }, [
+                              t._v(
+                                "\n\t\t\t\t\t\tProceed to checkout\n\t\t\t\t\t"
+                              )
+                            ])
+                          ]
+                        : [
+                            a("div", { staticClass: "cart-empty" }, [
+                              t._v("There are no items in your cart")
+                            ])
+                          ]
                     ]
               ],
               2
@@ -1387,7 +1404,7 @@
           ])
         ]);
       },
-      _t = [
+      bt = [
         function() {
           var t = this,
             e = t.$createElement,
@@ -1401,104 +1418,44 @@
           ]);
         }
       ],
-      bt = function() {
-        var t = this,
-          e = t.$createElement,
-          a = t._self._c || e;
-        return a("div", [
-          a("td", [t._v(t._s(t.product.name))]),
-          a("td", [t._v(t._s(t.convertToCash(parseInt(t.product.price))))]),
-          a("td", [
-            a("input", {
-              attrs: { type: "number", min: 1, max: t.product.quantity },
-              domProps: { value: t.productName },
-              on: {
-                change: function(e) {
-                  return t.updateQty(t.product.id, t.product.quantity);
-                }
-              }
-            })
-          ]),
-          a("td", [
-            t._v(
-              t._s(
-                t.convertToCash(parseInt(t.productPrice * t.quantityToPurchase))
-              )
-            )
-          ]),
-          a(
-            "td",
-            [
-              a("icon-living", {
-                staticClass: "fa1-times",
-                attrs: { icon: "times" },
-                on: {
-                  click: function(e) {
-                    return t.removeFromCart(t.productID);
-                  }
-                }
-              })
-            ],
-            1
-          )
-        ]);
-      },
-      yt = [],
-      Ct = {
-        name: "cartProduct",
-        props: [
-          "productName",
-          "productID",
-          "productPrice",
-          "availableQty",
-          "quantityToPurchase"
-        ],
-        methods: {
-          removeFromCart: function(t) {
-            this.$store.commit(REMOVE_FROM_CART, t);
-          },
-          convertToCash: function(t) {
-            for (var e in ("string" !== typeof t && (t = String(t)),
-            (t = t.split("").reverse()),
-            t))
-              (e - 3) % 3 === 0 && 0 != e && (t[e] = "".concat(t[e], ","));
-            var a = t.reverse().join("");
-            return a;
-          }
-        }
-      },
-      wt = Ct,
-      xt = Object(v["a"])(wt, bt, yt, !1, null, null, null),
-      Pt = (xt.exports,
-      {
+      _t = void 0,
+      yt = {
         name: "cart",
+        components: { Loader: N },
         title: "DragonVert - Cart",
         data: function() {
-          return { itemQty: 1, cart: [], loading: !1 };
+          return { loading: !0 };
         },
         created: function() {
-          window.scrollTo(0, 0),
-            y.a
-              .get("https://dragonvert.joppa.ng/cart/")
-              .then(function(t) {
-                200 === t.status && console.log(t.data.data);
-              })
-              .catch(function(t) {
-                return console.log(t);
-              });
+          var t = this;
+          (null !== this.$store.state.token &&
+            "" !== this.$store.state.token) ||
+            this.$router.push({ path: "login", query: { redirectTo: "cart" } }),
+            this.$store.dispatch("updateCart").then(function() {
+              t.cart = t.$store.state.cart;
+            }),
+            window.scrollTo(0, 0);
         },
         mounted: function() {},
         computed: {
           money: function() {
             return a("b132").money;
+          },
+          cart: function() {
+            return _t.$store.getters.cart;
           }
         },
-        methods: { updateQty: function(t, e) {} }
-      }),
-      kt = Pt,
-      Nt = Object(v["a"])(kt, ft, _t, !1, null, null, null),
-      Ot = Nt.exports,
-      $t = function() {
+        methods: {
+          updateQty: function(t, e) {},
+          removeFromCart: function() {
+            console.log("Jimmy Olsen");
+          }
+        }
+      },
+      Ct = yt,
+      wt = (a("a01b"), Object(v["a"])(Ct, ft, bt, !1, null, "0e1a4521", null)),
+      xt = wt.exports,
+      Pt = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -1514,8 +1471,8 @@
           2
         );
       },
-      St = [],
-      Et = {
+      kt = [],
+      Nt = {
         name: "checkout",
         title: "DragonVert - Cart | Checkout",
         components: { Loader: N },
@@ -1528,10 +1485,10 @@
           window.scrollTo(0, 0);
         }
       },
-      Dt = Et,
-      qt = Object(v["a"])(Dt, $t, St, !1, null, null, null),
-      At = qt.exports,
-      Tt = function() {
+      Ot = Nt,
+      $t = Object(v["a"])(Ot, Pt, kt, !1, null, null, null),
+      St = $t.exports,
+      Et = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -1591,8 +1548,8 @@
           ])
         ]);
       },
-      jt = [],
-      Lt = function() {
+      qt = [],
+      Dt = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -1625,8 +1582,8 @@
           ])
         ]);
       },
-      It = [],
-      Mt = {
+      At = [],
+      Tt = {
         name: "CategoryProducts",
         data: function() {
           return { showLoader: !0 };
@@ -1634,15 +1591,15 @@
         props: ["products"],
         components: { Product: W }
       },
-      Rt = Mt,
-      Ft = Object(v["a"])(Rt, Lt, It, !1, null, null, null),
-      Ut = Ft.exports,
-      Vt = {
+      Lt = Tt,
+      jt = Object(v["a"])(Lt, Dt, At, !1, null, null, null),
+      It = jt.exports,
+      Mt = {
         name: "category",
         data: function() {
           return { category: this.$route.params.category };
         },
-        components: { CategoryProducts: Ut, Footer: it, Loader: N },
+        components: { CategoryProducts: It, Footer: it, Loader: N },
         title: function() {
           return "DragonVert - ".concat(this.$route.params.category);
         },
@@ -1662,10 +1619,10 @@
           }
         }
       },
-      zt = Vt,
-      Bt = (a("5d58"), Object(v["a"])(zt, Tt, jt, !1, null, "da5a7966", null)),
-      Ht = Bt.exports,
-      Yt = function() {
+      Ut = Mt,
+      Ft = (a("5d58"), Object(v["a"])(Ut, Et, qt, !1, null, "da5a7966", null)),
+      Rt = Ft.exports,
+      Vt = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -1714,76 +1671,81 @@
                                         height: 330
                                       }
                                     }),
-                                    a("span", {
-                                      class:
-                                        "img-thumbnail " +
-                                        (t.activeImageThumbnail ===
-                                        t.product.attributes.equipment_images[0]
-                                          ? "active"
-                                          : ""),
-                                      style: {
-                                        backgroundImage:
-                                          "url(" +
+                                    a("div", [
+                                      a("span", {
+                                        class:
+                                          "img-thumbnail " +
+                                          (t.activeImageThumbnail ===
                                           t.product.attributes
-                                            .equipment_images[0] +
-                                          ")"
-                                      },
-                                      on: {
-                                        click: function(e) {
-                                          return t.changeActiveImageThumbnail(
+                                            .equipment_images[0]
+                                            ? "active"
+                                            : ""),
+                                        style: {
+                                          backgroundImage:
+                                            "url(" +
                                             t.product.attributes
-                                              .equipment_images[0]
-                                          );
+                                              .equipment_images[0] +
+                                            ")"
+                                        },
+                                        on: {
+                                          click: function(e) {
+                                            return t.changeActiveImageThumbnail(
+                                              t.product.attributes
+                                                .equipment_images[0]
+                                            );
+                                          }
                                         }
-                                      }
-                                    }),
-                                    a("span", {
-                                      class:
-                                        "img-thumbnail " +
-                                        (t.activeImageThumbnail ===
-                                        t.product.attributes.equipment_images[1]
-                                          ? "active"
-                                          : ""),
-                                      style: {
-                                        backgroundImage:
-                                          "url(" +
+                                      }),
+                                      a("span", {
+                                        class:
+                                          "img-thumbnail " +
+                                          (t.activeImageThumbnail ===
                                           t.product.attributes
-                                            .equipment_images[1] +
-                                          ")"
-                                      },
-                                      on: {
-                                        click: function(e) {
-                                          return t.changeActiveImageThumbnail(
+                                            .equipment_images[1]
+                                            ? "active"
+                                            : ""),
+                                        style: {
+                                          backgroundImage:
+                                            "url(" +
                                             t.product.attributes
-                                              .equipment_images[1]
-                                          );
+                                              .equipment_images[1] +
+                                            ")"
+                                        },
+                                        on: {
+                                          click: function(e) {
+                                            return t.changeActiveImageThumbnail(
+                                              t.product.attributes
+                                                .equipment_images[1]
+                                            );
+                                          }
                                         }
-                                      }
-                                    }),
-                                    a("span", {
-                                      class:
-                                        "img-thumbnail " +
-                                        (t.activeImageThumbnail ===
-                                        t.product.attributes.equipment_images[2]
-                                          ? "active"
-                                          : "") +
-                                        " last",
-                                      style: {
-                                        backgroundImage:
-                                          "url(" +
+                                      }),
+                                      a("span", {
+                                        class:
+                                          "img-thumbnail " +
+                                          (t.activeImageThumbnail ===
                                           t.product.attributes
-                                            .equipment_images[2] +
-                                          ")"
-                                      },
-                                      on: {
-                                        click: function(e) {
-                                          return t.changeActiveImageThumbnail(
+                                            .equipment_images[2]
+                                            ? "active"
+                                            : "") +
+                                          " last",
+                                        style: {
+                                          backgroundImage:
+                                            "url(" +
                                             t.product.attributes
-                                              .equipment_images[2]
-                                          );
+                                              .equipment_images[2] +
+                                            ")"
+                                        },
+                                        on: {
+                                          click: function(e) {
+                                            return t.changeActiveImageThumbnail(
+                                              t.product.attributes
+                                                .equipment_images[2]
+                                            );
+                                          }
                                         }
-                                      }
-                                    })
+                                      })
+                                    ])
                                   ],
                                   1
                                 ),
@@ -1797,8 +1759,11 @@
                                         "background-size": "cover"
                                       },
                                       attrs: {
-                                        image: t.product.attributes.image,
+                                        image:
+                                          t.activeImageThumbnail ||
+                                          t.product.attributes.image,
                                         "image-full":
+                                          t.activeImageThumbnail ||
                                           t.product.attributes.image,
                                         "zoom-window-size": 1,
                                         "zoom-level": 1.8,
@@ -1808,12 +1773,87 @@
                                         height: 330
                                       }
                                     }),
-                                    t._m(0)
+                                    a("div", [
+                                      a("span", {
+                                        class:
+                                          "img-thumbnail-mobile " +
+                                          (t.activeImageThumbnail ===
+                                          t.product.attributes
+                                            .equipment_images[0]
+                                            ? "active"
+                                            : ""),
+                                        style: {
+                                          backgroundImage:
+                                            "url(" +
+                                            t.product.attributes
+                                              .equipment_images[0] +
+                                            ")"
+                                        },
+                                        on: {
+                                          click: function(e) {
+                                            return t.changeActiveImageThumbnail(
+                                              t.product.attributes
+                                                .equipment_images[0]
+                                            );
+                                          }
+                                        }
+                                      }),
+                                      a("span", {
+                                        class:
+                                          "img-thumbnail-mobile " +
+                                          (t.activeImageThumbnail ===
+                                          t.product.attributes
+                                            .equipment_images[1]
+                                            ? "active"
+                                            : ""),
+                                        style: {
+                                          backgroundImage:
+                                            "url(" +
+                                            t.product.attributes
+                                              .equipment_images[1] +
+                                            ")"
+                                        },
+                                        on: {
+                                          click: function(e) {
+                                            return t.changeActiveImageThumbnail(
+                                              t.product.attributes
+                                                .equipment_images[1]
+                                            );
+                                          }
+                                        }
+                                      }),
+                                      a("span", {
+                                        class:
+                                          "img-thumbnail-mobile " +
+                                          (t.activeImageThumbnail ===
+                                          t.product.attributes
+                                            .equipment_images[2]
+                                            ? "active"
+                                            : "") +
+                                          " last",
+                                        style: {
+                                          backgroundImage:
+                                            "url(" +
+                                            t.product.attributes
+                                              .equipment_images[2] +
+                                            ")"
+                                        },
+                                        on: {
+                                          click: function(e) {
+                                            return t.changeActiveImageThumbnail(
+                                              t.product.attributes
+                                                .equipment_images[2]
+                                            );
+                                          }
+                                        }
+                                      })
+                                    ])
                                   ],
                                   1
                                 )
                               ]
                             ),
+                            a("div", { staticClass: "space-for-mobile" }),
                             a(
                               "div",
                               { staticClass: "col-xsmall-12 col-small-6" },
@@ -2041,62 +2081,50 @@
           2
         );
       },
-      Gt = [
-        function() {
-          var t = this,
-            e = t.$createElement,
-            a = t._self._c || e;
-          return a("div", { staticClass: "grid-wrapper" }, [
-            a("div", { staticClass: "grid-row" }, [
-              a("div", { staticClass: "col-xsmall-4" }, [t._v("J")]),
-              a("div", { staticClass: "col-xsmall-4" }, [t._v("J")])
-            ])
-          ]);
-        }
-      ],
-      Qt = (a("7f7f"), "ALL_PRODUCTS"),
-      Jt = "ALL_PRODUCTS_SUCCESS",
-      Wt = "PRODUCT_BY_ID",
-      Zt = "PRODUCT_BY_ID_SUCCESS",
-      Kt = "ADD_PRODUCT",
-      Xt = "ADD_PRODUCT_SUCCESS",
-      te = "UPDATE_PRODUCT",
-      ee = "UPDATE_PRODUCT_SUCCESS",
-      ae = "REMOVE_PRODUCT",
-      re = "REMOVE_PRODUCT_SUCCESS",
-      oe = "ADD_TO_CART",
-      se = "REMOVE_FROM_CART",
-      ie = "UPDATE_CART",
-      ne = "ALL_PHARMACIES",
-      ce = "ALL_PHARMACIES_SUCCESS",
-      le = "ALL_CATEGORIES",
-      ue = "ALL_CATEGORIES_SUCCESS",
-      de = "CATEGORY",
-      me = "CATEGORY_SUCCESS",
-      pe = "USER_LOGIN",
-      ve = "USER_LOGIN_SUCCESS",
-      he = "USER_LOGOUT",
-      ge = "LOAD_DASH_COMPONENT",
-      fe = "LOADED_DASH_COMPONENT",
-      _e = "UPDATE_URL",
-      be = "UPDATE_USER",
-      ye = "UPDATE_MERCHANT",
-      Ce = "UPDATE_MERCHANT_PRODUCTS",
-      we = a("e173"),
-      xe = a.n(we);
-    n["a"].use(xe.a);
-    var Pe,
+      zt = [],
+      Bt = (a("7f7f"), "ALL_PRODUCTS"),
+      Yt = "ALL_PRODUCTS_SUCCESS",
+      Ht = "PRODUCT_BY_ID",
+      Gt = "PRODUCT_BY_ID_SUCCESS",
+      Jt = "ADD_PRODUCT",
+      Qt = "ADD_PRODUCT_SUCCESS",
+      Wt = "UPDATE_PRODUCT",
+      Zt = "UPDATE_PRODUCT_SUCCESS",
+      Kt = "REMOVE_PRODUCT",
+      Xt = "REMOVE_PRODUCT_SUCCESS",
+      te = "ADD_TO_CART",
+      ee = "REMOVE_FROM_CART",
+      ae = "UPDATE_CART",
+      re = "ALL_PHARMACIES",
+      oe = "ALL_PHARMACIES_SUCCESS",
+      se = "ALL_CATEGORIES",
+      ie = "ALL_CATEGORIES_SUCCESS",
+      ne = "CATEGORY",
+      ce = "CATEGORY_SUCCESS",
+      le = "USER_LOGIN",
+      ue = "USER_LOGIN_SUCCESS",
+      de = "USER_LOGOUT",
+      me = "LOAD_DASH_COMPONENT",
+      pe = "LOADED_DASH_COMPONENT",
+      ve = "UPDATE_URL",
+      he = "UPDATE_USER",
+      ge = "UPDATE_MERCHANT",
+      fe = "UPDATE_MERCHANT_PRODUCTS",
+      be = a("e173"),
+      _e = a.n(be);
+    n["a"].use(_e.a);
+    var ye,
+      Ce,
+      we,
+      xe,
+      Pe,
       ke,
-      Ne,
-      Oe,
-      $e,
-      Se,
-      Ee = {
+      Ne = {
         name: "productDetail",
         title: function() {
           return this.title;
         },
-        components: { Loader: N, Footer: it, VueHZoom: xe.a },
+        components: { Loader: N, Footer: it, VueHZoom: _e.a },
         data: function() {
           return {
             detailsLoaded: !1,
@@ -2138,13 +2166,13 @@
             this.activeImageThumbnail = t;
           },
           addToCart: function() {
-            this.$store.commit(oe, this.product);
+            this.$store.commit(te, this.product);
           },
           removeFromCart: function() {
-            this.$store.commit(se, this.product.id);
+            this.$store.commit(ee, this.product.id);
           },
           buyNow: function() {
-            this.$store.commit(oe, this.product), this.$router.push("/cart");
+            this.$store.commit(te, this.product), this.$router.push("/cart");
           }
         },
         watch: {
@@ -2167,10 +2195,10 @@
           }
         }
       },
-      De = Ee,
-      qe = (a("31e6"), Object(v["a"])(De, Yt, Gt, !1, null, "0d464285", null)),
-      Ae = qe.exports,
-      Te = function() {
+      Oe = Ne,
+      $e = (a("b80f"), Object(v["a"])(Oe, Vt, zt, !1, null, "65a0eac0", null)),
+      Se = $e.exports,
+      Ee = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -2184,21 +2212,21 @@
           1
         );
       },
-      je = [],
-      Le = {
+      qe = [],
+      De = {
         name: "categoriesPage",
         components: { Categories: F, Footer: it }
       },
-      Ie = Le,
-      Me = Object(v["a"])(Ie, Te, je, !1, null, null, null),
-      Re = Me.exports,
-      Fe = function() {
+      Ae = De,
+      Te = Object(v["a"])(Ae, Ee, qe, !1, null, null, null),
+      Le = Te.exports,
+      je = function() {
         var t = this,
           e = t.$createElement;
         t._self._c;
         return t._m(0);
       },
-      Ue = [
+      Ie = [
         function() {
           var t = this,
             e = t.$createElement,
@@ -2213,11 +2241,11 @@
           ]);
         }
       ],
-      Ve = { name: "404error" },
-      ze = Ve,
-      Be = Object(v["a"])(ze, Fe, Ue, !1, null, null, null),
-      He = Be.exports,
-      Ye = function() {
+      Me = { name: "404error" },
+      Ue = Me,
+      Fe = Object(v["a"])(Ue, je, Ie, !1, null, null, null),
+      Re = Fe.exports,
+      Ve = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -2278,11 +2306,11 @@
           1
         );
       },
-      Ge = [],
-      Qe = (a("dfa4"), a("7212")),
-      Je = {
+      ze = [],
+      Be = (a("dfa4"), a("7212")),
+      Ye = {
         name: "productSlider",
-        components: { swiper: Qe["swiper"], swiperSlide: Qe["swiperSlide"] },
+        components: { swiper: Be["swiper"], swiperSlide: Be["swiperSlide"] },
         props: ["category"],
         data: function() {
           return {
@@ -2299,10 +2327,10 @@
           };
         }
       },
-      We = Je,
-      Ze = (a("afca"), Object(v["a"])(We, Ye, Ge, !1, null, "6c5b743c", null)),
-      Ke = Ze.exports,
-      Xe = function() {
+      He = Ye,
+      Ge = (a("afca"), Object(v["a"])(He, Ve, ze, !1, null, "6c5b743c", null)),
+      Je = Ge.exports,
+      Qe = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -2535,8 +2563,8 @@
           1
         );
       },
-      ta = [],
-      ea = {
+      We = [],
+      Ze = {
         name: "searchPage",
         title: function() {
           return "DragonVert - Search Result for ".concat(
@@ -2588,10 +2616,10 @@
           }
         }
       },
-      aa = ea,
-      ra = Object(v["a"])(aa, Xe, ta, !1, null, null, null),
-      oa = ra.exports,
-      sa = function() {
+      Ke = Ze,
+      Xe = Object(v["a"])(Ke, Qe, We, !1, null, null, null),
+      ta = Xe.exports,
+      ea = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -2620,8 +2648,8 @@
           ])
         ]);
       },
-      ia = [],
-      na = {
+      aa = [],
+      ra = {
         name: "unauthorized",
         data: function() {
           return { countDown: 5 };
@@ -2639,10 +2667,10 @@
           }, 1e3);
         }
       },
-      ca = na,
-      la = Object(v["a"])(ca, sa, ia, !1, null, null, null),
-      ua = la.exports,
-      da = function() {
+      oa = ra,
+      sa = Object(v["a"])(oa, ea, aa, !1, null, null, null),
+      ia = sa.exports,
+      na = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -2692,10 +2720,10 @@
           ])
         ]);
       },
-      ma = [],
-      pa = a("5d73"),
-      va = a.n(pa),
-      ha = {
+      ca = [],
+      la = a("5d73"),
+      ua = a.n(la),
+      da = {
         name: "allProducts",
         data: function() {
           return {
@@ -2706,7 +2734,7 @@
             totalNumberOfPages: 0
           };
         },
-        components: { CategoryProducts: Ut, Footer: it, Loader: N },
+        components: { CategoryProducts: It, Footer: it, Loader: N },
         title: function() {
           return "DragonVert - Recently Added";
         },
@@ -2750,7 +2778,7 @@
                   n = !1,
                   c = void 0;
                 try {
-                  for (var l, u = va()(o); !(i = (l = u.next()).done); i = !0) {
+                  for (var l, u = ua()(o); !(i = (l = u.next()).done); i = !0) {
                     var d = l.value;
                     t.products.push(d);
                   }
@@ -2777,10 +2805,10 @@
           }
         }
       },
-      ga = ha,
-      fa = (a("22df"), Object(v["a"])(ga, da, ma, !1, null, "3cf9398c", null)),
-      _a = fa.exports,
-      ba = function() {
+      ma = da,
+      pa = (a("22df"), Object(v["a"])(ma, na, ca, !1, null, "3cf9398c", null)),
+      va = pa.exports,
+      ha = function() {
         var t = this,
           e = t.$createElement,
           r = t._self._c || e;
@@ -3006,10 +3034,10 @@
           1
         );
       },
-      ya = [],
-      Ca = a("a4bb"),
-      wa = a.n(Ca),
-      xa = {
+      ga = [],
+      fa = a("a4bb"),
+      ba = a.n(fa),
+      _a = {
         name: "login",
         title: "DragonVert - Login",
         components: { Footer: it },
@@ -3041,18 +3069,18 @@
             };
             this.$store
               .dispatch("login", e)
-              .then(function(e) {
+              .then(function() {
                 t.submitting = !1;
                 try {
-                  if (wa()(t.$route.query).length > 0)
+                  if (ba()(t.$route.query).length > 0)
                     t.$router.push(t.$route.query.redirectTo);
                   else {
-                    var a = t.$store.getters.getUser.account_type;
-                    "merchant" === a
+                    var e = t.$store.getters.getUser.account_type;
+                    "merchant" === e
                       ? t.$router.push("/admin/merchant")
                       : t.$router.push("/admin/user");
                   }
-                } catch (r) {}
+                } catch (a) {}
               })
               .catch(function(e) {
                 t.submitting = !1;
@@ -3065,16 +3093,12 @@
         updated: function() {
           this.authenticationErrors = this.$store.state.authErrors;
         },
-        watch: {
-          $route: function(t, e) {
-            console.log(t);
-          }
-        }
+        watch: { $route: function(t) {} }
       },
-      Pa = xa,
-      ka = (a("8b07"), Object(v["a"])(Pa, ba, ya, !1, null, "176f1efd", null)),
-      Na = ka.exports,
-      Oa = function() {
+      ya = _a,
+      Ca = (a("a64b"), Object(v["a"])(ya, ha, ga, !1, null, "4bcf7656", null)),
+      wa = Ca.exports,
+      xa = function() {
         var t = this,
           e = t.$createElement,
           r = t._self._c || e;
@@ -3409,8 +3433,8 @@
           1
         );
       },
-      $a = [],
-      Sa = {
+      Pa = [],
+      ka = {
         name: "register",
         title: "DragonVert\t - Register",
         components: { Footer: it },
@@ -3482,12 +3506,12 @@
           }
         }
       },
-      Ea = Sa,
-      Da = (a("dcc3"),
+      Na = ka,
+      Oa = (a("dcc3"),
       a("6f2d"),
-      Object(v["a"])(Ea, Oa, $a, !1, null, "335ae6c4", null)),
-      qa = Da.exports,
-      Aa = function() {
+      Object(v["a"])(Na, xa, Pa, !1, null, "335ae6c4", null)),
+      $a = Oa.exports,
+      Sa = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -3611,8 +3635,8 @@
           1
         );
       },
-      Ta = [],
-      ja = {
+      Ea = [],
+      qa = {
         name: "login",
         title: "DrugStore - Forgot Password",
         components: { Footer: it },
@@ -3629,21 +3653,21 @@
             console.log(this.errors);
         }
       },
-      La = ja,
-      Ia = Object(v["a"])(La, Aa, Ta, !1, null, null, null),
-      Ma = Ia.exports,
-      Ra = function() {
+      Da = qa,
+      Aa = Object(v["a"])(Da, Sa, Ea, !1, null, null, null),
+      Ta = Aa.exports,
+      La = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
         return a("div", { attrs: { id: "profile" } }, [a("router-view")], 1);
       },
-      Fa = [],
-      Ua = { name: "profile" },
-      Va = Ua,
-      za = Object(v["a"])(Va, Ra, Fa, !1, null, null, null),
-      Ba = za.exports,
-      Ha = function() {
+      ja = [],
+      Ia = { name: "profile" },
+      Ma = Ia,
+      Ua = Object(v["a"])(Ma, La, ja, !1, null, null, null),
+      Fa = Ua.exports,
+      Ra = function() {
         var t = this,
           e = t.$createElement,
           r = t._self._c || e;
@@ -4266,9 +4290,9 @@
           1
         );
       },
-      Ya = [],
-      Ga = a("bd86"),
-      Qa = function() {
+      Va = [],
+      za = a("bd86"),
+      Ba = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -4372,29 +4396,29 @@
           ])
         ]);
       },
-      Ja = [],
-      Wa = {
+      Ya = [],
+      Ha = {
         name: "DashNav",
         data: function() {
           return {};
         },
         props: ["navClosed", "superAdmin"]
       },
-      Za = Wa,
-      Ka = Object(v["a"])(Za, Qa, Ja, !1, null, null, null),
-      Xa = Ka.exports,
-      tr = function() {
+      Ga = Ha,
+      Ja = Object(v["a"])(Ga, Ba, Ya, !1, null, null, null),
+      Qa = Ja.exports,
+      Wa = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
         return a("div");
       },
-      er = [],
-      ar = { name: "DashLoader" },
-      rr = ar,
-      or = Object(v["a"])(rr, tr, er, !1, null, null, null),
-      sr = or.exports,
-      ir = {
+      Za = [],
+      Ka = { name: "DashLoader" },
+      Xa = Ka,
+      tr = Object(v["a"])(Xa, Wa, Za, !1, null, null, null),
+      er = tr.exports,
+      ar = {
         name: "dashboard",
         data: function() {
           return {
@@ -4402,7 +4426,7 @@
             editActivated: !1,
             updatingProfile: !1,
             activeTab: "Dashboard",
-            user: Object(Ga["a"])(
+            user: Object(za["a"])(
               {
                 firstName: "",
                 lastName: "",
@@ -4417,7 +4441,7 @@
             )
           };
         },
-        components: { DashNav: Xa, DashLoader: sr },
+        components: { DashNav: Qa, DashLoader: er },
         computed: {
           activate: function() {
             (this.editActivated = !0), this.$refs.firstNameInput.focus();
@@ -4475,9 +4499,9 @@
           return "DrugStore - Patient Dashboard";
         }
       },
-      nr = ir,
-      cr = (a("4be7"), Object(v["a"])(nr, Ha, Ya, !1, null, "765d41c0", null)),
-      lr = (cr.exports,
+      rr = ar,
+      or = (a("4be7"), Object(v["a"])(rr, Ra, Va, !1, null, "765d41c0", null)),
+      sr = (or.exports,
       function() {
         var t = this,
           e = t.$createElement,
@@ -4592,7 +4616,7 @@
           1
         );
       }),
-      ur = [
+      ir = [
         function() {
           var t = this,
             e = t.$createElement,
@@ -4616,10 +4640,10 @@
           ]);
         }
       ],
-      dr = a("75fc"),
-      mr = a("f499"),
-      pr = a.n(mr),
-      vr = function() {
+      nr = a("75fc"),
+      cr = a("f499"),
+      lr = a.n(cr),
+      ur = function() {
         var t = this,
           e = t.$createElement,
           r = t._self._c || e;
@@ -4958,8 +4982,8 @@
           ]
         );
       },
-      hr = [],
-      gr = {
+      dr = [],
+      mr = {
         name: "superAdminNav",
         data: function() {
           return {
@@ -5002,10 +5026,10 @@
           }
         }
       },
-      fr = gr,
-      _r = (a("9c48"), Object(v["a"])(fr, vr, hr, !1, null, null, null)),
-      br = _r.exports,
-      yr = function() {
+      pr = mr,
+      vr = (a("9c48"), Object(v["a"])(pr, ur, dr, !1, null, null, null)),
+      hr = vr.exports,
+      gr = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -5028,7 +5052,7 @@
           )
         ]);
       },
-      Cr = [
+      fr = [
         function() {
           var t = this,
             e = t.$createElement,
@@ -5041,10 +5065,10 @@
           ]);
         }
       ],
-      wr = { name: "categories", props: ["categories"] },
-      xr = wr,
-      Pr = Object(v["a"])(xr, yr, Cr, !1, null, null, null),
-      kr = (Pr.exports,
+      br = { name: "categories", props: ["categories"] },
+      _r = br,
+      yr = Object(v["a"])(_r, gr, fr, !1, null, null, null),
+      Cr = (yr.exports,
       function() {
         var t = this,
           e = t.$createElement,
@@ -5962,7 +5986,7 @@
           2
         );
       }),
-      Nr = [
+      wr = [
         function() {
           var t = this,
             e = t.$createElement,
@@ -5979,7 +6003,7 @@
           ]);
         }
       ],
-      Or = {
+      xr = {
         name: "products",
         data: function() {
           return {
@@ -6061,7 +6085,7 @@
                     sub_category: u || "",
                     quantity: d,
                     price: m,
-                    images: Object(dr["a"])(this.product.images),
+                    images: Object(nr["a"])(this.product.images),
                     image: p
                   }
                 }
@@ -6169,10 +6193,10 @@
           }
         }
       },
-      $r = Or,
-      Sr = (a("6323"), Object(v["a"])($r, kr, Nr, !1, null, "2a96cbf4", null)),
-      Er = Sr.exports,
-      Dr = function() {
+      Pr = xr,
+      kr = (a("6323"), Object(v["a"])(Pr, Cr, wr, !1, null, "2a96cbf4", null)),
+      Nr = kr.exports,
+      Or = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -6217,7 +6241,7 @@
           )
         ]);
       },
-      qr = [
+      $r = [
         function() {
           var t = this,
             e = t.$createElement,
@@ -6237,7 +6261,7 @@
           ]);
         }
       ],
-      Ar = {
+      Sr = {
         name: "manageOrders",
         props: ["orders"],
         computed: {
@@ -6246,10 +6270,10 @@
           }
         }
       },
-      Tr = Ar,
-      jr = Object(v["a"])(Tr, Dr, qr, !1, null, null, null),
-      Lr = jr.exports,
-      Ir = {
+      Er = Sr,
+      qr = Object(v["a"])(Er, Or, $r, !1, null, null, null),
+      Dr = qr.exports,
+      Ar = {
         name: "superAdminDashboard",
         title: function() {
           return "DragonVert - Merchant's dashboard";
@@ -6279,14 +6303,14 @@
               )
               .then(function(e) {
                 200 === e.status &&
-                  (localStorage.setItem("merchant", pr()(e.data)),
+                  (localStorage.setItem("merchant", lr()(e.data)),
                   t.$store.dispatch("updateMerchant", e.data)),
                   t.getAllPromises();
               }),
             0 === this.$store.getters.allCategories.length &&
               this.$store.dispatch("allCategories");
         },
-        components: { superAdminNav: br, products: Er, manageOrders: Lr },
+        components: { superAdminNav: hr, products: Nr, manageOrders: Dr },
         computed: {
           annotate: function() {
             return a("b132").money;
@@ -6328,7 +6352,7 @@
                   c = i.meta;
                 (t.orderNumber = c.pagination.count),
                   (t.loadedOrders = !0),
-                  (t.orders = Object(dr["a"])(n));
+                  (t.orders = Object(nr["a"])(n));
               })
             );
           },
@@ -6350,10 +6374,10 @@
           }
         }
       },
-      Mr = Ir,
-      Rr = (a("3212"), Object(v["a"])(Mr, lr, ur, !1, null, "490bd3e4", null)),
-      Fr = Rr.exports,
-      Ur = function() {
+      Tr = Ar,
+      Lr = (a("3212"), Object(v["a"])(Tr, sr, ir, !1, null, "490bd3e4", null)),
+      jr = Lr.exports,
+      Ir = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -6361,12 +6385,12 @@
           t._v("register pharmacy")
         ]);
       },
-      Vr = [],
-      zr = { name: "pharmacyRegister" },
-      Br = zr,
-      Hr = Object(v["a"])(Br, Ur, Vr, !1, null, null, null),
-      Yr = Hr.exports,
-      Gr = function() {
+      Mr = [],
+      Ur = { name: "pharmacyRegister" },
+      Fr = Ur,
+      Rr = Object(v["a"])(Fr, Ir, Mr, !1, null, null, null),
+      Vr = Rr.exports,
+      zr = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -6773,8 +6797,8 @@
           ]
         );
       },
-      Qr = [],
-      Jr = {
+      Br = [],
+      Yr = {
         name: "productForm",
         data: function() {
           return {
@@ -6833,10 +6857,10 @@
           }
         }
       },
-      Wr = Jr,
-      Zr = Object(v["a"])(Wr, Gr, Qr, !1, null, null, null),
-      Kr = Zr.exports,
-      Xr = function() {
+      Hr = Yr,
+      Gr = Object(v["a"])(Hr, zr, Br, !1, null, null, null),
+      Jr = Gr.exports,
+      Qr = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -6852,8 +6876,8 @@
           1
         );
       },
-      to = [],
-      eo = function() {
+      Wr = [],
+      Zr = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -7211,8 +7235,8 @@
           ]
         );
       },
-      ao = [],
-      ro = {
+      Kr = [],
+      Xr = {
         name: "productForm",
         props: ["isEditing", "model"],
         data: function() {
@@ -7233,25 +7257,25 @@
           }
         }
       },
-      oo = ro,
-      so = Object(v["a"])(oo, eo, ao, !1, null, null, null),
-      io = so.exports,
-      no = {
+      to = Xr,
+      eo = Object(v["a"])(to, Zr, Kr, !1, null, null, null),
+      ao = eo.exports,
+      ro = {
         name: "edit",
         data: function() {
           return { model: {} };
         },
-        components: { productForm: io },
+        components: { productForm: ao },
         methods: {
           updateProduct: function(t) {
             console.log("Product Updated");
           }
         }
       },
-      co = no,
-      lo = Object(v["a"])(co, Xr, to, !1, null, null, null),
-      uo = lo.exports,
-      mo = function() {
+      oo = ro,
+      so = Object(v["a"])(oo, Qr, Wr, !1, null, null, null),
+      io = so.exports,
+      no = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -7267,10 +7291,10 @@
           1
         );
       },
-      po = [],
-      vo = {
+      co = [],
+      lo = {
         name: "edit",
-        components: { productForm: io },
+        components: { productForm: ao },
         data: function() {
           return { model: {} };
         },
@@ -7280,10 +7304,10 @@
           }
         }
       },
-      ho = vo,
-      go = Object(v["a"])(ho, mo, po, !1, null, null, null),
-      fo = go.exports,
-      _o = function() {
+      uo = lo,
+      mo = Object(v["a"])(uo, no, co, !1, null, null, null),
+      po = mo.exports,
+      vo = function() {
         var t = this,
           e = t.$createElement,
           a = t._self._c || e;
@@ -7516,7 +7540,7 @@
           1
         );
       },
-      bo = [
+      ho = [
         function() {
           var t = this,
             e = t.$createElement,
@@ -7528,7 +7552,7 @@
           ]);
         }
       ],
-      yo = {
+      go = {
         name: "contact",
         title: "DragonVert - Contact Us",
         components: { Footer: it },
@@ -7539,13 +7563,13 @@
           return { fullName: "", email: "", message: "", subject: "" };
         }
       },
-      Co = yo,
-      wo = Object(v["a"])(Co, _o, bo, !1, null, null, null),
-      xo = wo.exports,
-      Po = a("5176"),
-      ko = a.n(Po),
-      No = a("2f62"),
-      Oo = {
+      fo = go,
+      bo = Object(v["a"])(fo, vo, ho, !1, null, null, null),
+      _o = bo.exports,
+      yo = a("5176"),
+      Co = a.n(yo),
+      wo = a("2f62"),
+      xo = {
         getUser: function(t) {
           return t.user;
         },
@@ -7559,7 +7583,7 @@
           return t.authError;
         }
       },
-      $o = {
+      Po = {
         allProducts: function(t, e) {
           return t.products;
         },
@@ -7576,108 +7600,111 @@
           };
         }
       },
-      So = {
+      ko = {
         getCategory: function(t, e) {
           return t.category;
         }
       },
-      Eo = {
+      No = {
         allCategories: function(t, e) {
           return t.categories;
         }
       },
-      Do = {
+      Oo = {
         allManufacturers: function(t) {
           return t.manufacturers;
         }
       },
-      qo = {
+      $o = {
         cart: function(t) {
           return t.cart;
+        },
+        cartLoading: function(t) {
+          return t.cartLoading;
         }
       },
-      Ao = {
+      So = {
         next: function(t) {
           return t.next;
         }
       },
-      To = (a("20d6"), a("cebc")),
-      jo = ((Pe = {}),
-      Object(Ga["a"])(Pe, pe, function(t) {
+      Eo = (a("20d6"), a("cebc")),
+      qo = ((ye = {}),
+      Object(za["a"])(ye, le, function(t) {
         t.showLoader = !0;
       }),
-      Object(Ga["a"])(Pe, ve, function(t, e) {
+      Object(za["a"])(ye, ue, function(t, e) {
         (t.showLoader = !1), (t.isLoggedIn = !0), (t.user = e);
       }),
-      Object(Ga["a"])(Pe, he, function(t) {
+      Object(za["a"])(ye, de, function(t) {
         t.isLoggedIn = !1;
       }),
-      Object(Ga["a"])(Pe, "auth_request", function(t) {
+      Object(za["a"])(ye, "auth_request", function(t) {
         t.showLoader = !0;
       }),
-      Object(Ga["a"])(Pe, "auth_success", function(t, e) {
+      Object(za["a"])(ye, "auth_success", function(t, e) {
         (t.authErrors = []),
           (t.token = e),
           (t.showLoader = !1),
           (t.userStatus = "Authentication Successful");
       }),
-      Object(Ga["a"])(Pe, "auth_error", function(t, e) {
+      Object(za["a"])(ye, "auth_error", function(t, e) {
         (t.authError = e), (t.userStatus = "Authentication Error");
       }),
-      Object(Ga["a"])(Pe, "auth_errors", function(t, e) {
+      Object(za["a"])(ye, "auth_errors", function(t, e) {
         (t.authErrors = e), (t.userStatus = "Authentication Error");
       }),
-      Object(Ga["a"])(Pe, "logout", function(t) {
+      Object(za["a"])(ye, "logout", function(t) {
         localStorage.removeItem("user"),
           localStorage.removeItem("token"),
           (t.showLoader = !1),
           (t.token = ""),
           (t.user = {});
       }),
-      Object(Ga["a"])(Pe, be, function(t, e) {
+      Object(za["a"])(ye, he, function(t, e) {
         t.user = e;
       }),
-      Object(Ga["a"])(Pe, ye, function(t, e) {
+      Object(za["a"])(ye, ge, function(t, e) {
         t.merchant = e;
       }),
-      Object(Ga["a"])(Pe, Ce, function(t, e) {
+      Object(za["a"])(ye, fe, function(t, e) {
         t.merchantProducts = e;
       }),
-      Pe),
-      Lo = ((ke = {}),
-      Object(Ga["a"])(ke, Qt, function(t) {
+      ye),
+      Do = ((Ce = {}),
+      Object(za["a"])(Ce, Bt, function(t) {
         t.showLoader = !0;
       }),
-      Object(Ga["a"])(ke, Jt, function(t, e) {
+      Object(za["a"])(Ce, Yt, function(t, e) {
         (t.showLoader = !1), (t.products = e);
       }),
-      Object(Ga["a"])(ke, Wt, function(t) {
+      Object(za["a"])(Ce, Ht, function(t) {
         t.showLoader = !0;
       }),
-      Object(Ga["a"])(ke, Zt, function(t, e) {
+      Object(za["a"])(Ce, Gt, function(t, e) {
         (t.showLoader = !1), (t.product = e);
       }),
-      Object(Ga["a"])(ke, Kt, function(t) {
+      Object(za["a"])(Ce, Jt, function(t) {
         t.showLoader = !0;
       }),
-      Object(Ga["a"])(ke, Xt, function(t, e) {
+      Object(za["a"])(Ce, Qt, function(t, e) {
         (t.showLoader = !1), t.products.push(e);
       }),
-      Object(Ga["a"])(ke, le, function(t) {
+      Object(za["a"])(Ce, se, function(t) {
         t.showLoader = !0;
       }),
-      Object(Ga["a"])(ke, ue, function(t, e) {
+      Object(za["a"])(Ce, ie, function(t, e) {
         (t.showLoader = !1), (t.categories = e);
       }),
-      Object(Ga["a"])(ke, te, function(t) {
+      Object(za["a"])(Ce, Wt, function(t) {
         t.showLoader = !0;
       }),
-      Object(Ga["a"])(ke, ee, function(t, e) {
+      Object(za["a"])(Ce, Zt, function(t, e) {
         (t.showLoader = !1),
           (t.products = t.products.map(function(a) {
             if (a.id === e.id)
               return (
-                (e = Object(To["a"])({}, e, {
+                (e = Object(Eo["a"])({}, e, {
                   manufacturer: t.pharmacies.filter(function(t) {
                     return t.id === e.manufacturer[0];
                   })
@@ -7686,71 +7713,71 @@
               );
           }));
       }),
-      Object(Ga["a"])(ke, ae, function(t) {
+      Object(za["a"])(Ce, Kt, function(t) {
         t.showLoader = !0;
       }),
-      Object(Ga["a"])(ke, re, function(t, e) {
+      Object(za["a"])(Ce, Xt, function(t, e) {
         t.showLoader = !1;
         var a = t.products.findIndex(function(t) {
           return t.id === e;
         });
         t.products.splice(a, 1);
       }),
-      ke),
-      Io = ((Ne = {}),
-      Object(Ga["a"])(Ne, oe, function(t, e) {
+      Ce),
+      Ao = ((we = {}),
+      Object(za["a"])(we, te, function(t, e) {
         if (t.cart.indexOf(e) > 0) {
           var a = t.cart.indexOf(e);
           t.cart[a].quantityToPurchase += 1;
         } else (e.quantityToPurchase = 1), t.cart.push(e);
       }),
-      Object(Ga["a"])(Ne, se, function(t, e) {
+      Object(za["a"])(we, ee, function(t, e) {
         var a = t.cart.findIndex(function(t) {
           return t.id === e;
         });
-        t.cart.splice(a, 1), console.log(t.cart, t.cart.length, a);
+        t.cart.splice(a, 1);
       }),
-      Object(Ga["a"])(Ne, ie, function(t, e) {
-        t.cart = e;
+      Object(za["a"])(we, ae, function(t, e) {
+        (t.cart = e), (t.cartLoading = !1);
       }),
-      Ne),
-      Mo = ((Oe = {}),
-      Object(Ga["a"])(Oe, ne, function(t) {
+      we),
+      To = ((xe = {}),
+      Object(za["a"])(xe, re, function(t) {
         t.showLoader = !0;
       }),
-      Object(Ga["a"])(Oe, ce, function(t, e) {
+      Object(za["a"])(xe, oe, function(t, e) {
         (t.showLoader = !1), (t.pharmacies = e);
       }),
-      Oe),
-      Ro = (($e = {}),
-      Object(Ga["a"])($e, de, function(t) {
+      xe),
+      Lo = ((Pe = {}),
+      Object(za["a"])(Pe, ne, function(t) {
         t.showLoader = !0;
       }),
-      Object(Ga["a"])($e, me, function(t, e) {
+      Object(za["a"])(Pe, ce, function(t, e) {
         (t.showLoader = !1),
           (t.category =
             void 0 === e ? "No product available in this category yet" : e);
       }),
-      $e),
-      Fo = Object(Ga["a"])({}, _e, function(t, e) {
+      Pe),
+      jo = Object(za["a"])({}, ve, function(t, e) {
         t.next = e;
       }),
-      Uo = ((Se = {}),
-      Object(Ga["a"])(Se, ge, function(t) {
+      Io = ((ke = {}),
+      Object(za["a"])(ke, me, function(t) {
         t.loadedDashComponent = !1;
       }),
-      Object(Ga["a"])(Se, fe, function(t) {
+      Object(za["a"])(ke, pe, function(t) {
         t.loadedDashComponent = !0;
       }),
       a("db0c")),
-      Vo = a.n(Uo),
-      zo = "https://dragonvert.joppa.ng",
-      Bo = {
+      Mo = a.n(Io),
+      Uo = "https://dragonvert.joppa.ng",
+      Fo = {
         login: function(t, e) {
           var a = t.commit;
           return new i.a(function(t, r) {
             a("auth_request"),
-              y()("".concat(zo, "/auth/login/"), {
+              y()("".concat(Uo, "/auth/login/"), {
                 data: e,
                 method: "POST",
                 headers: { "Content-Type": "application/vnd.api+json" }
@@ -7758,19 +7785,19 @@
                 .then(function(e) {
                   if ("error" === e.data.statusText) {
                     a("auth_error", e.data.statusText);
-                    var o = Object(dr["a"])(Vo()(e.data.data));
+                    var o = Object(nr["a"])(Mo()(e.data.data));
                     a("auth_errors", o), r(e.data.statusText);
                   } else {
                     var s = e.data,
                       i = s.user,
                       n = s.token;
-                    localStorage.setItem("user", pr()(i)),
+                    localStorage.setItem("user", lr()(i)),
                       localStorage.setItem("token", n),
                       (y.a.defaults.headers.common[
                         "Authorization"
                       ] = "Bearer ".concat(n)),
                       a("auth_success", n),
-                      a(ve, i),
+                      a(ue, i),
                       t(e);
                   }
                 })
@@ -7786,7 +7813,7 @@
           var a = t.commit;
           return new i.a(function(t, r) {
             a("auth_request"),
-              y()("".concat(zo, "/auth/registration/"), {
+              y()("".concat(Uo, "/auth/registration/"), {
                 data: e,
                 method: "POST",
                 headers: { "Content-Type": "application/vnd.api+json" }
@@ -7798,7 +7825,7 @@
                   localStorage.removeItem("token"),
                     localStorage.setItem("token", s),
                     localStorage.removeItem("user"),
-                    localStorage.setItem("user", pr()(o)),
+                    localStorage.setItem("user", lr()(o)),
                     (y.a.defaults.headers.common[
                       "Authorization"
                     ] = "Bearer ".concat(s)),
@@ -7833,77 +7860,84 @@
         updateUser: function(t, e) {
           var a = t.commit;
           return new i.a(function(t, r) {
-            a(be, e), t();
+            a(he, e), t();
           });
         },
         updateMerchant: function(t, e) {
           var a = t.commit;
           return new i.a(function(t, r) {
             try {
-              a(ye, e), t();
+              a(ge, e), t();
             } catch (o) {
               console.log(o);
             }
           });
         }
       },
-      Ho = {
+      Ro = {
         allProducts: function(t) {
           var e = t.commit;
-          e(Qt),
-            y.a.get("".concat(zo, "/equipments")).then(function(t) {
-              console.log(t), e(Jt, t.data);
+          e(Bt),
+            y.a.get("".concat(Uo, "/equipments")).then(function(t) {
+              console.log(t), e(Yt, t.data);
             });
         },
         allMerchantProducts: function(t, e) {
           var a = t.commit;
-          a(Ce, e);
+          a(fe, e);
         },
         updateMerchantProducts: function(t, e) {
           var a = t.commit;
           y.a
             .get("https://dragonvert.joppa.ng/equipments/?merchant=".concat(e))
             .then(function(t) {
-              console.log(t), a(Ce, t.data.data);
+              console.log(t), a(fe, t.data.data);
             });
         },
         productById: function(t, e) {
           var a = t.commit;
-          a(Wt),
-            y.a.get("".concat(zo, "/products/").concat(e)).then(function(t) {
+          a(Ht),
+            y.a.get("".concat(Uo, "/products/").concat(e)).then(function(t) {
               console.log(t);
             });
         },
-        updateCart: function(t, e) {
-          var a = t.commit;
-          a(ie, e);
+        updateCart: function(t) {
+          var e = t.commit;
+          y.a
+            .get("https://dragonvert.joppa.ng/cart/")
+            .then(function(t) {
+              200 === t.status && e(ae, t.data.data);
+            })
+            .catch(function(t) {
+              return console.log(t);
+            });
         }
       },
-      Yo = {},
-      Go = {
+      Vo = {},
+      zo = {
         allCategories: function(t) {
           var e = t.commit;
-          e(le),
-            y.a.get("".concat(zo, "/categories")).then(function(t) {
-              e(ue, t.data.data);
+          e(se),
+            y.a.get("".concat(Uo, "/categories")).then(function(t) {
+              e(ie, t.data.data);
             });
         },
         category: function(t, e) {
           var a = t.commit;
-          a(de),
+          a(ne),
             y.a
-              .get("".concat(zo, "/equipments/?main_category=").concat(e))
+              .get("".concat(Uo, "/equipments/?main_category=").concat(e))
               .then(function(t) {
-                console.log(t), a(me, t.data.data);
+                console.log(t), a(ce, t.data.data);
               });
         }
       },
-      Qo = {};
-    n["a"].use(No["a"]);
-    var Jo = new No["a"].Store({
+      Bo = {};
+    n["a"].use(wo["a"]);
+    var Yo = new wo["a"].Store({
       strict: !0,
       state: {
-        cart: localStorage.getItem("cart") || [],
+        cart: [],
         showLoader: !1,
         product: {},
         category: [],
@@ -7915,149 +7949,145 @@
         isLoggedIn: !1,
         authError: "",
         authErrors: [],
-        merchantProducts: []
+        merchantProducts: [],
+        cartLoading: !0
       },
-      actions: ko()({}, Ho, Qo, Go, Yo, Bo),
-      getters: ko()({}, $o, Do, Eo, So, Oo, qo, Ao),
-      mutations: ko()({}, Io, Mo, Lo, Ro, jo, Fo)
+      actions: Co()({}, Ro, Bo, zo, Vo, Fo),
+      getters: Co()({}, Po, Oo, No, ko, xo, $o, So),
+      mutations: Co()({}, Ao, To, Do, Lo, qo, jo)
     });
-    n["a"].use(j["a"]);
-    var Wo = new j["a"]({
+    n["a"].use(L["a"]);
+    var Ho = new L["a"]({
       mode: "history",
       base: "/",
       routes: [
         { path: "/", name: "home", component: ut },
         { path: "/loader", name: "loader", component: N },
         { path: "/about", name: "about", component: gt },
-        { path: "/contact", name: "contact", component: xo },
-        { path: "/equipments/:id", name: "productDetails", component: Ae },
-        { path: "/equipments", name: "products", component: _a },
-        { path: "/cart", name: "cart", component: Ot },
-        { path: "/categories", name: "Categories", component: Re },
-        { path: "/categories/:category", name: "Category", component: Ht },
-        { path: "/checkout", name: "checkout", component: At },
-        { path: "/product", component: Ke },
-        { path: "/login", name: "login", component: Na },
-        { path: "/register", name: "register", component: qa },
-        { path: "/pharmacy/register", name: "pharmacyRegister", component: Yr },
-        { path: "/forgot-password", name: "forgotPassword", component: Ma },
-        { path: "/search/:query", name: "search", component: oa },
-        { path: "/diagnozed", name: "unauthorized", component: ua },
+        { path: "/contact", name: "contact", component: _o },
+        { path: "/equipments/:id", name: "productDetails", component: Se },
+        { path: "/equipments", name: "products", component: va },
+        { path: "/cart", name: "cart", component: xt },
+        { path: "/categories", name: "Categories", component: Le },
+        { path: "/categories/:category", name: "Category", component: Rt },
+        { path: "/checkout", name: "checkout", component: St },
+        { path: "/product", component: Je },
+        { path: "/login", name: "login", component: wa },
+        { path: "/register", name: "register", component: $a },
+        { path: "/pharmacy/register", name: "pharmacyRegister", component: Vr },
+        { path: "/forgot-password", name: "forgotPassword", component: Ta },
+        { path: "/search/:query", name: "search", component: ta },
+        { path: "/diagnozed", name: "unauthorized", component: ia },
         {
           path: "/admin",
           name: "admin",
-          component: Ba,
+          component: Fa,
           children: [
-            { path: "user", component: Fr },
-            { path: "merchant", component: Fr },
-            { path: "complete-details", component: Kr },
-            { path: "edit/:id", component: uo },
-            { path: "post", component: fo }
+            { path: "user", component: jr },
+            { path: "merchant", component: jr },
+            { path: "complete-details", component: Jr },
+            { path: "edit/:id", component: io },
+            { path: "post", component: po }
           ],
           meta: { requiresAuth: !0 }
         },
-        { path: "*", component: He }
+        { path: "*", component: Re }
       ]
     });
-    Wo.beforeEach(function(t, e, a) {
+    Ho.beforeEach(function(t, e, a) {
       t.matched.some(function(t) {
         return t.meta.requiresAuth;
       })
-        ? Jo.getters.isLoggedIn
+        ? Yo.getters.isLoggedIn
           ? a()
           : a({ path: "/login", query: { redirectTo: t.fullPath } })
         : a();
     });
-    var Zo = Wo,
-      Ko = a("7bb1"),
-      Xo = a("2103"),
-      ts = a.n(Xo),
-      es = a("ecee"),
-      as = a("c074"),
-      rs = a("ad3d"),
-      os = a("f2d1");
-    function ss(t) {
+    var Go = Ho,
+      Jo = a("7bb1"),
+      Qo = a("2103"),
+      Wo = a.n(Qo),
+      Zo = a("ecee"),
+      Ko = a("c074"),
+      Xo = a("ad3d"),
+      ts = a("f2d1");
+    function es(t) {
       var e = t.$options.title;
       if (e) return "function" === typeof e ? e.call(t) : e;
     }
-    var is = {
+    var as = {
       created: function() {
-        var t = ss(this);
+        var t = es(this);
         t && (document.title = t);
       }
     };
     (y.a.defaults.headers.post["Content-Type"] = "application/vnd.api+json"),
-      n["a"].mixin(is),
+      n["a"].mixin(as),
       a("ed18").config(),
-      (n["a"].prototype.$http = y.a),
-      (n["a"].config.errorHandler = function(t) {
-        console.log("New Error man: ", t);
-      });
-    var ns = localStorage.getItem("token");
+      (n["a"].prototype.$http = y.a);
+    var rs = localStorage.getItem("token");
     y.a.interceptors.response.use(
       function(t) {
         return t;
       },
       function(t) {
-        console.log(t);
-        t.config;
-        return i.a.reject(t);
+        return 401 === t.request.status && Go.push("/login"), i.a.reject(t);
       }
     ),
-      ns &&
-        (y.a.defaults.headers.common["Authorization"] = "Bearer ".concat(ns)),
-      es["c"].add(
-        os["b"],
-        os["c"],
-        os["a"],
-        as["v"],
-        as["H"],
-        as["E"],
-        as["i"],
-        as["B"],
-        as["r"],
-        as["g"],
-        as["F"],
-        as["I"],
-        as["e"],
-        as["A"],
-        as["G"],
-        as["b"],
-        as["l"],
-        as["x"],
-        as["J"],
-        as["w"],
-        as["a"],
-        as["r"],
-        as["o"],
-        as["n"],
-        as["p"],
-        as["u"],
-        as["j"],
-        as["k"],
-        as["c"],
-        as["d"],
-        as["f"],
-        as["J"],
-        as["m"],
-        as["a"],
-        as["D"],
-        as["C"],
-        as["q"],
-        as["y"],
-        as["z"],
-        as["t"],
-        as["h"],
-        as["s"]
+      rs &&
+        (y.a.defaults.headers.common["Authorization"] = "Bearer ".concat(rs)),
+      Zo["c"].add(
+        ts["b"],
+        ts["c"],
+        ts["a"],
+        Ko["v"],
+        Ko["H"],
+        Ko["E"],
+        Ko["i"],
+        Ko["B"],
+        Ko["r"],
+        Ko["g"],
+        Ko["F"],
+        Ko["I"],
+        Ko["e"],
+        Ko["A"],
+        Ko["G"],
+        Ko["b"],
+        Ko["l"],
+        Ko["x"],
+        Ko["J"],
+        Ko["w"],
+        Ko["a"],
+        Ko["r"],
+        Ko["o"],
+        Ko["n"],
+        Ko["p"],
+        Ko["u"],
+        Ko["j"],
+        Ko["k"],
+        Ko["c"],
+        Ko["d"],
+        Ko["f"],
+        Ko["J"],
+        Ko["m"],
+        Ko["a"],
+        Ko["D"],
+        Ko["C"],
+        Ko["q"],
+        Ko["y"],
+        Ko["z"],
+        Ko["t"],
+        Ko["h"],
+        Ko["s"]
       ),
-      n["a"].use(Ko["a"]),
-      n["a"].use(ts.a),
-      n["a"].use(xe.a),
-      n["a"].component("icon-living", rs["a"]),
+      n["a"].use(Jo["a"]),
+      n["a"].use(Wo.a),
+      n["a"].use(_e.a),
+      n["a"].component("icon-living", Xo["a"]),
       (n["a"].config.productionTip = !1),
       new n["a"]({
-        router: Zo,
-        store: Jo,
+        router: Go,
+        store: Yo,
         render: function(t) {
           return t(T);
         }
@@ -8089,6 +8119,7 @@
     o.a;
   },
   "79b9": function(t, e, a) {},
+  "824e": function(t, e, a) {},
   "899d": function(t, e, a) {},
   "8ae9": function(t, e, a) {
     "use strict";
@@ -8096,13 +8127,6 @@
       o = a.n(r);
     o.a;
   },
-  "8b07": function(t, e, a) {
-    "use strict";
-    var r = a("ddd6"),
-      o = a.n(r);
-    o.a;
-  },
-  9762: function(t, e, a) {},
   "9bdb": function(t, e, a) {},
   "9c48": function(t, e, a) {
     "use strict";
@@ -8110,6 +8134,19 @@
       o = a.n(r);
     o.a;
   },
+  a01b: function(t, e, a) {
+    "use strict";
+    var r = a("824e"),
+      o = a.n(r);
+    o.a;
+  },
+  a64b: function(t, e, a) {
+    "use strict";
+    var r = a("abf5"),
+      o = a.n(r);
+    o.a;
+  },
+  abf5: function(t, e, a) {},
   afca: function(t, e, a) {
     "use strict";
     var r = a("9bdb"),
@@ -8132,6 +8169,12 @@
       return a;
     };
   },
+  b80f: function(t, e, a) {
+    "use strict";
+    var r = a("2ea0"),
+      o = a.n(r);
+    o.a;
+  },
   bb10: function(t, e, a) {
     t.exports = a.p + "img/Rolling-1s-200px.14c167cf.gif";
   },
@@ -8145,9 +8188,8 @@
       o = a.n(r);
     o.a;
   },
-  ddd6: function(t, e, a) {},
   ed1e: function(t, e, a) {},
   f4c8: function(t, e, a) {},
   ffe7: function(t, e, a) {}
 });
-//# sourceMappingURL=app.a0bdb7f7.js.map
+//# sourceMappingURL=app.4c629da0.js.map

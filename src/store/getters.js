@@ -38,7 +38,8 @@ export const pharmacies = {
 };
 
 export const cartGetter = {
-  cart: state => state.cart
+  cart: state => state.cart,
+  cartLoading: state => state.cartLoading
 };
 
 export const urlGetter = {

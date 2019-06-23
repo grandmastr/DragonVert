@@ -171,7 +171,7 @@ router.beforeEach((to, from, next) => {
       next({
         path: "/login",
         query: {
-          redirectTo: to.fullPath // managing intended paths, there should be a better way but this will do for now
+          redirectTo: to.fullPath // managing intended paths, the re should be a better way but this will do for now
         }
       });
     } else {
