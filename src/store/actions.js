@@ -175,11 +175,29 @@ export const productActions = {
         "Content-Type": "application/vnd.api+json"
       },
       data
-    }).then(response => {
-      axios.get("https://dragonvert.joppa.ng/cart/").then(response => {
-        if (response.status === 200) commit(UPDATE_CART, response.data.data);
-      });
-    });
+    })
+      .then(() => {
+        axios.get("https://dragonvert.joppa.ng/cart/").then(response => {
+          if (response.status === 200) commit(UPDATE_CART, response.data.data);
+          else console.log(response);
+        });
+      })
+      .catch(e => console.table(e));
+  },
+  removeFromCart({ commit }, id) {
+    axios(`https://dragonvert.joppa.ng/cart/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/vnd.api+json"
+      }
+    })
+      .then(() => {
+        axios.get(`https://dragonvert.joppa.ng/cart/`).then(response => {
+          if (response.status === 200) commit(UPDATE_CART, response.data.data);
+          else console.log(response);
+        });
+      })
+      .catch(e => console.table(e));
   }
 };
 

@@ -1,7 +1,7 @@
 <template>
 	<router-link :to="`/equipments/${product.id}`">
 		<figure :style="{backgroundImage: `url(${product.attributes.image})`}">
-			<p v-if="this.$store.state.cart.indexOf(product) < 0" class="add-to-cart-button">
+			<p v-if="!this.$store.state.cart.map(p => Number(p.attributes.equipment_info.id)).includes(Number(this.product.id))" class="add-to-cart-button">
 				<button @click.prevent="addToCart(product.id)">Add To Cart</button>
 			</p>
 			<p v-else class="remove-from-cart-button">
@@ -16,8 +16,6 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
 	name: "product",
 	data() {
@@ -27,6 +25,8 @@ export default {
 		};
 	},
 	props: ["product"],
+	created() {
+	},
 	computed: {
 		money: () => {
 			return require("../mixins/helpers").money;
@@ -53,19 +53,8 @@ export default {
 			this.$store.dispatch("addToCart", productDetails);
 		},
 		removeFromCart(id) {
-			this.$store.commit(REMOVE_FROM_CART, id);
-		},
-		convertToCash(price) {
-			if (typeof price !== "string") price = String(price);
-			price = price.split("").reverse();
-
-			for (let i in price) if ((i - 3) % 3 === 0 && i != 0) price[i] = `${price[i]},`;
-
-			const result = price.reverse().join("");
-
-			return result;
+			this.$store.dispatch("removeFromCart", id);
 		}
-	},
-	updated() {}
+	}
 };
 </script>

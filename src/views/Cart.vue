@@ -90,15 +90,7 @@ export default {
 	methods: {
 		updateQty(qty, index) {},
 		removeFromCart(id) {
-			axios(`https://dragonvert.joppa.ng/cart/${id}`, {
-				method: 'DELETE',
-				headers: {
-					'Content-Type': 'application/vnd.api+json'
-				}
-			}).then(response => {
-				this.$store.dispatch("updateCart");
-				console.table(response)
-			}).catch(e => console.log(e))
+			this.$store.dispatch("removeFromCart", id);
 		}
 	}
 };
