@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4afc306-60f4-41aa-b648-17b662685cff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/partials/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/partials/Product.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Cart.vue" afterDir="false" />
-    </list>
+    <list default="true" id="c4afc306-60f4-41aa-b648-17b662685cff" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -368,12 +363,12 @@
       <workItem from="1561301131934" duration="2967000" />
       <workItem from="1561306188744" duration="229000" />
       <workItem from="1561306464619" duration="24790000" />
-      <workItem from="1561389673876" duration="1119000" />
+      <workItem from="1561389673876" duration="1461000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180972000" />
+    <option name="totallyTimeSpent" value="181314000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -386,7 +381,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.65642995" visible="true" weight="0.15984848" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
